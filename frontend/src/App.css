@@ -32,3 +32,8 @@
         transform: rotate(360deg);
     }
 }
+
+/* Remove center alignment for better text flow */
+.App {
+    min-height: 100vh;
+}
