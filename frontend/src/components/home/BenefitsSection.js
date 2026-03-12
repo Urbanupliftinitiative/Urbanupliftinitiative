@@ -1,28 +1,28 @@
 import React from 'react';
-import { TrendingUp, DollarSign, Shield, Building2 } from 'lucide-react';
+import { TrendingUp, Shield, Users, BarChart } from 'lucide-react';
 
 const BenefitsSection = () => {
   const benefits = [
-    { icon: TrendingUp, title: "Accelerate revenue uplift through smart amenities" },
-    { icon: DollarSign, title: "Increase NOI by reducing operational overhead" },
-    { icon: Shield, title: "Protect and future-proof your asset value" },
-    { icon: Building2, title: "Differentiate your portfolio in a competitive market" }
+    { icon: TrendingUp, title: "Improve IVF success rates through better adherence" },
+    { icon: Shield, title: "Reduce clinical risk with AI-powered monitoring" },
+    { icon: Users, title: "Increase transparency for intended parents" },
+    { icon: BarChart, title: "Build defensible data for predictive insights" }
   ];
 
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-full mb-6">
-            Controlled Access
+          <div className="inline-block px-4 py-2 bg-purple-900 text-white text-sm font-medium rounded-full mb-6">
+            Clinical Excellence
           </div>
           <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
-            Powering the Next Generation of Smart Buildings.
+            Powering the Next Generation of Fertility Care.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            DOOR transforms access and automation into Building Intelligence, helping 
-            properties operate smarter, reduce costs, and deliver the modern experience 
-            residents expect.
+            OnePermit transforms fertility care through intelligent monitoring, helping 
+            clinics improve outcomes, reduce risk, and deliver the modern experience 
+            patients and surrogates expect.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ const BenefitsSection = () => {
                 key={idx}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-700 transition-colors">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 leading-snug">

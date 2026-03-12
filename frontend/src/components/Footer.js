@@ -3,26 +3,26 @@ import React from 'react';
 const Footer = () => {
   const footerSections = [
     {
-      title: "Office Locations",
+      title: "Contact Us",
       items: [
-        "St. Louis, 1220 N. Price Road,",
-        "Suite 2, Olivette, MO, 63132",
+        "San Francisco, CA 94103",
+        "United States",
         "",
-        "Boston, 136 Newbury Street,",
-        "Boston, MA, 02116"
+        "info@onepermit.com",
+        "1-800-ONE-PERM"
       ]
     },
     {
       title: "",
-      items: ["FAQs", "Support", "Request a Quote", "LinkedIn"]
+      items: ["FAQ", "Support", "Request a Demo", "Contact Sales"]
     },
     {
       title: "",
-      items: ["Products Overview", "Articles", "About Us", "Careers", "News"]
+      items: ["Platform Overview", "Resources", "About Us", "Careers", "Blog"]
     },
     {
       title: "",
-      items: ["Partners", "Investors", "Legal", "Privacy Notice", "Terms", "Cookies", "Manage Cookies"]
+      items: ["Partners", "Clinics", "Agencies", "Privacy Policy", "Terms of Service", "HIPAA Compliance"]
     }
   ];
 
@@ -52,32 +52,30 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Building Intelligence tagline */}
         <div className="mb-8">
-          <p className="text-lg text-gray-900 font-light">Building Intelligence.</p>
+          <p className="text-lg text-gray-900 font-light">Intelligent Fertility Care.</p>
         </div>
 
-        {/* MASSIVE DOOR wordmark */}
+        {/* MASSIVE ONEPERMIT wordmark */}
         <div className="relative mb-12 overflow-hidden">
-          <div className="text-[15rem] lg:text-[20rem] font-bold text-gray-900 leading-none tracking-tighter select-none">
-            DOOR
+          <div className="text-[12rem] lg:text-[18rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 leading-none tracking-tighter select-none">
+            ONEPERMIT
           </div>
         </div>
 
-        {/* Copyright and legal links */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200">
           <p className="text-sm text-gray-500 mb-4 md:mb-0">
-            ©DOOR{new Date().getFullYear()}
+            ©OnePermit {new Date().getFullYear()}
           </p>
           <div className="flex items-center space-x-6">
             <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-              PRIVACY NOTICE
+              PRIVACY POLICY
             </a>
             <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-              TERMS
+              TERMS OF SERVICE
             </a>
             <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
-              COOKIES
+              HIPAA COMPLIANCE
             </a>
           </div>
         </div>

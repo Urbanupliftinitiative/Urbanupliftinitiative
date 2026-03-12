@@ -4,22 +4,22 @@ import { Button } from '../ui/button';
 const FeaturesSection = () => {
   const features = [
     {
-      title: "Intuitive Solutions",
-      description: "Our hardware and software combine function with impeccable form. We create solutions that integrate with existing platforms seamlessly and work efficiently both at install and into the future.",
-      image: "https://images.unsplash.com/photo-1549109926-58f039549485?w=800",
-      bgColor: "bg-gradient-to-br from-[#b8a5c9] via-[#a895b9] to-[#8875a9]"
+      title: "Patient-Centered Care",
+      description: "Our platform combines intuitive design with powerful functionality. We create solutions that integrate seamlessly with existing clinical workflows and empower patients throughout their fertility journey.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+      bgColor: "bg-gradient-to-br from-[#e8d5e8] via-[#d8c5d8] to-[#b8a5b8]"
     },
     {
-      title: "Simple & Unified Systems",
-      description: "DOOR makes access easy, simplifying operations and tasks for teams and residents. Our intelligent IoT hardware suite not only notifies, it senses, acts, and automates.",
-      image: "https://images.unsplash.com/photo-1662454419736-de132ff75638?w=800",
-      bgColor: "bg-gradient-to-br from-[#b5c5d0] via-[#a5b5c0] to-[#8595a0]"
+      title: "Unified Care Platform",
+      description: "OnePermit makes fertility care simple, connecting patients, surrogates, clinics, and agencies. Our intelligent system tracks medications, monitors vitals, and automates workflows—helping teams reduce risk and scale efficiency across their entire practice.",
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800",
+      bgColor: "bg-gradient-to-br from-[#d5e5f0] via-[#c5d5e0] to-[#a5b5c0]"
     },
     {
-      title: "Enhanced Security",
-      description: "Safeguard residents at every touchpoint and leverage cutting-edge access technology and data protection protocols.",
-      image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800",
-      bgColor: "bg-[url('https://images.unsplash.com/photo-1574848296471-28f79a036f79?w=1200')] bg-cover bg-center",
+      title: "HIPAA-Compliant Security",
+      description: "Safeguard patient data at every touchpoint with enterprise-grade encryption, role-based access controls, and comprehensive audit logging.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800",
+      bgColor: "bg-gradient-to-br from-[#e5d5e0] via-[#d5c5d0] to-[#b5a5b0]",
       textured: true
     }
   ];
@@ -40,7 +40,7 @@ const FeaturesSection = () => {
                   {feature.description}
                 </p>
                 <Button className={`${feature.textured ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} rounded-full px-8 py-6 text-base font-medium transition-all`}>
-                  Explore DOOR solutions
+                  Explore OnePermit
                 </Button>
               </div>
 

@@ -7,10 +7,10 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const devices = [
-    { type: 'locks', gradient: 'from-[#d4b5a0] via-[#c9a68a] to-[#8b7355]' },
-    { type: 'reader', gradient: 'from-[#b8a5a5] via-[#a89696] to-[#7a6b6b]' },
-    { type: 'hub', gradient: 'from-[#c0b5b0] via-[#b0a5a0] to-[#8a7f7a]' },
-    { type: 'sensor', gradient: 'from-[#d0c5c0] via-[#c0b5b0] to-[#9a8f8a]' }
+    { type: 'app', gradient: 'from-[#e8d5e8] via-[#d8c5d8] to-[#b8a5b8]' },
+    { type: 'dashboard', gradient: 'from-[#d5e5f0] via-[#c5d5e0] to-[#a5b5c0]' },
+    { type: 'monitor', gradient: 'from-[#e5d5e0] via-[#d5c5d0] to-[#b5a5b0]' },
+    { type: 'tracker', gradient: 'from-[#d5e8e8] via-[#c5d8d8] to-[#a5b8b8]' }
   ];
 
   useEffect(() => {
@@ -28,27 +28,32 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-7xl font-light text-gray-900 leading-tight">
-              Your Key to<br />
-              Smart Buildings
+              Your Partner in<br />
+              IVF & Surrogacy Care
             </h1>
             <p className="text-xl lg:text-2xl text-gray-800 max-w-xl">
-              Unify access, automation, and operations into one platform built for modern multifamily.
+              Unify patients, surrogates, clinics, and agencies into one intelligent care platform.
             </p>
             <Button 
               onClick={() => navigate('/talk-to-sales')}
               className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-6 text-base font-medium transition-all shadow-lg hover:shadow-xl"
             >
-              Talk to sales →
+              Request a demo →
             </Button>
           </div>
 
           <div className="relative w-full h-[600px] flex items-center justify-center">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-white to-gray-100 rounded-[3rem] shadow-2xl transform transition-all duration-1000">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-1000">
-                <div className="w-20 h-20 bg-gray-200 rounded-full border-4 border-gray-300"></div>
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-3xl">+</span>
+                  </div>
+                  <div className="text-xs text-gray-600 font-medium">IVF Care</div>
+                </div>
               </div>
               <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-medium tracking-wider">
-                DOOR
+                ONEPERMIT
               </div>
             </div>
           </div>

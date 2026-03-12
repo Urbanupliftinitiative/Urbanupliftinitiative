@@ -10,39 +10,59 @@ const IntelligenceSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
-              Intelligence <br />Built In
+              AI-Powered <br />Patient Monitoring
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              DOOR connects hardware, software, and automation into one cohesive system. 
-              The result is greater visibility, fewer manual workflows, and stronger operational 
-              oversight across every property.
+              OnePermit connects medication tracking, vital monitoring, and appointment management 
+              into one cohesive system. The result is greater visibility, improved adherence, and 
+              better outcomes across every fertility journey.
             </p>
           </div>
 
           <div className="relative">
-            <div className="relative aspect-[4/3] bg-gray-100 rounded-3xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1770197247933-63e02c014cb7?w=800" 
-                alt="DOOR Intercom" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative aspect-[4/3] bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl overflow-hidden shadow-xl">
+              <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-600">Today's Tasks</span>
+                      <span className="text-xs text-green-600 font-semibold">95% Complete</span>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white text-xs">✓</span>
+                        </div>
+                        <span className="text-sm text-gray-700">Morning Medication</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white text-xs">✓</span>
+                        </div>
+                        <span className="text-sm text-gray-700">Vitals Logged</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-5 h-5 bg-purple-500 rounded-full"></div>
+                        <span className="text-sm text-gray-700">Evening Injection Due</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="relative">
                   <div className="absolute -top-32 left-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-lg">
-                    Latch Camera
+                    Medication Tracking
                   </div>
                   <div className="absolute -top-16 right-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-lg">
-                    Latch M3
-                  </div>
-                  <div className="bg-black px-6 py-3 rounded-full text-white font-medium shadow-2xl">
-                    Latch Intercom
+                    Vital Monitoring
                   </div>
                   <div className="absolute top-16 left-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-lg">
-                    Latch M3
+                    AI Risk Detection
                   </div>
                   <div className="absolute top-32 right-0 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-lg">
-                    Latch Enterprise
+                    Appointment Sync
                   </div>
                 </div>
               </div>

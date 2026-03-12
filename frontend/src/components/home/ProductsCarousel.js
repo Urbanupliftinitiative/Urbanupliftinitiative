@@ -6,34 +6,34 @@ const ProductsCarousel = () => {
 
   const products = [
     {
-      title: "Smart Access Control",
-      description: "Manage every entry point remotely with secure, cloud-based access.",
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600"
+      title: "Medication Management",
+      description: "Personalized medication calendars with timed reminders, step-by-step instructions, and adherence tracking.",
+      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600"
     },
     {
-      title: "Smart Thermostat and Leak Prevention",
-      description: "Reduce energy costs and prevent damage with automated monitoring.",
-      image: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600"
+      title: "Vital & Symptom Tracking",
+      description: "Daily health monitoring including blood pressure, weight, temperature, mood, and symptom logging.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600"
     },
     {
-      title: "Smart Reader",
-      description: "Modern, contactless entry for shared spaces and common areas.",
-      image: "https://images.unsplash.com/photo-1637241613318-646f2c2a854a?w=600"
+      title: "Appointment Scheduling",
+      description: "Automated reminders for ultrasounds, bloodwork, retrievals, transfers, and follow-up visits.",
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600"
     },
     {
-      title: "Smart Intercom",
-      description: "Simplify visitor management with video, remote unlock, and real-time alerts.",
-      image: "https://images.unsplash.com/photo-1770197247933-63e02c014cb7?w=600"
+      title: "Document Vault",
+      description: "Secure storage for consent forms, lab results, legal agreements, and medical records.",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600"
     },
     {
-      title: "Residential Doors",
-      description: "High-quality, connected door hardware built for multifamily properties.",
-      image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600"
+      title: "AI Risk Detection",
+      description: "Intelligent pattern recognition to identify OHSS risk, compliance issues, and health concerns.",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600"
     },
     {
-      title: "Mortise Smart Lock (M3)",
-      description: "A sleek, reliable smart lock designed for modern units and retrofits.",
-      image: "https://images.unsplash.com/photo-1637241613318-646f2c2a854a?w=600"
+      title: "Family Portal",
+      description: "Secure access for partners, intended parents, and family members with controlled permissions.",
+      image: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600"
     }
   ];
 
@@ -51,10 +51,10 @@ const ProductsCarousel = () => {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 text-center">
-          Everything your property needs, built to work together.
+          Everything your fertility journey needs, built to work together.
         </h2>
         <p className="text-xl text-gray-600 mb-16 text-center max-w-3xl mx-auto">
-          From access control to automation, DOOR's integrated products work together to simplify operations.
+          From medication tracking to AI risk detection, OnePermit's integrated features work together to improve outcomes.
         </p>
 
         <div className="relative">
@@ -68,7 +68,7 @@ const ProductsCarousel = () => {
                 key={idx}
                 className="flex-shrink-0 w-80 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className="aspect-[4/3] relative overflow-hidden bg-gray-100">
+                <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50">
                   <img 
                     src={product.image}
                     alt={product.title}

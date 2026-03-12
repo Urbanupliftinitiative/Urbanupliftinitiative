@@ -2,10 +2,10 @@ import React from 'react';
 
 const StatsSection = () => {
   const stats = [
-    { label: "Up to 20% increase in operating efficiency", value: "20", suffix: "%", bg: "bg-gradient-to-br from-blue-100 to-blue-200" },
-    { label: "Up to $150 per unit saved on rekeying at turnover", value: "150", prefix: "$", suffix: "/unit", bg: "bg-gradient-to-br from-orange-100 to-orange-200" },
-    { label: "Annual savings per building", value: "80k", prefix: "$", bg: "bg-gradient-to-br from-amber-100 to-amber-200" },
-    { label: "Save up to 20 hrs per week through process automation", value: "20", suffix: " hours", bg: "bg-gradient-to-br from-gray-100 to-gray-200" }
+    { label: "Medication adherence rate with OnePermit", value: "95", suffix: "%", bg: "bg-gradient-to-br from-purple-100 to-purple-200" },
+    { label: "Time saved per week on patient coordination", value: "15", suffix: " hours", bg: "bg-gradient-to-br from-pink-100 to-pink-200" },
+    { label: "Surrogate compliance score achieved", value: "92", suffix: "%", bg: "bg-gradient-to-br from-blue-100 to-blue-200" },
+    { label: "Reduction in missed appointments", value: "40", suffix: "%", bg: "bg-gradient-to-br from-purple-100 to-pink-100" }
   ];
 
   return (

@@ -6,24 +6,24 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "Are you still supporting Latch products?",
-      answer: "Yes. All Latch hardware continues to be fully supported, with regular updates, system compatibility, and access to the DOOR App and DOOR OS."
+      question: "How does OnePermit integrate with our existing EMR system?",
+      answer: "OnePermit integrates with major EMR systems including Epic, Cerner, and Athenahealth through secure API connections. We handle the technical setup and provide ongoing support."
     },
     {
-      question: "Can we start with just one building or a partial rollout?",
-      answer: "Absolutely. DOOR supports partial rollouts and phased deployments. Whether it's one building or one hundred, our success team is there at every step."
+      question: "Can we start with a pilot program before full deployment?",
+      answer: "Absolutely. We support pilot programs and phased rollouts. Whether it's one clinic or your entire network, our success team is there at every step."
     },
     {
-      question: "Can DOOR be used in retrofit properties, or is it only for new developments?",
-      answer: "DOOR works for both new construction and retrofit properties. Our hardware installs easily on existing doors and infrastructure."
+      question: "Is OnePermit HIPAA compliant?",
+      answer: "Yes. OnePermit is fully HIPAA compliant with enterprise-grade encryption, role-based access controls, comprehensive audit logging, and regular security audits."
     },
     {
-      question: "How do I become a DOOR channel partner, installer, or authorized reseller?",
-      answer: "DOOR offers a robust Channel Partner Program. You can apply online to join the DOOR Channel Partner Network."
+      question: "How do surrogacy agencies monitor remote surrogates?",
+      answer: "Agencies receive real-time updates on medication adherence, vitals, symptoms, and appointments through customizable dashboards. AI-powered alerts flag potential issues before they become problems."
     },
     {
-      question: "What makes DOOR different from other access control and smart home systems?",
-      answer: "DOOR combines access, intercom, Smart Home automation, and portfolio-wide management into one platform."
+      question: "What makes OnePermit different from other fertility apps?",
+      answer: "OnePermit is the only platform built specifically for IVF and surrogacy workflows, with multi-role access, clinic integration, AI risk detection, and end-to-end journey tracking."
     }
   ];
 
@@ -36,8 +36,8 @@ const FAQSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4 flex items-center justify-center">
-            <div className="w-48 h-48 border-4 border-gray-200 rounded-3xl flex items-center justify-center">
-              <div className="text-gray-300 text-6xl">🔒</div>
+            <div className="w-48 h-48 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl flex items-center justify-center">
+              <div className="text-purple-500 text-6xl">💊</div>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const FAQSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="inline-flex items-center space-x-2 text-gray-900 hover:text-gray-600 font-medium transition-colors">
+          <a href="#" className="inline-flex items-center space-x-2 text-gray-900 hover:text-purple-600 font-medium transition-colors">
             <span>See all FAQs</span>
             <span>→</span>
           </a>

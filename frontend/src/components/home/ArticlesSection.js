@@ -3,25 +3,25 @@ import React from 'react';
 const ArticlesSection = () => {
   const articles = [
     {
-      image: "https://images.unsplash.com/photo-1574848296471-28f79a036f79?w=600",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600",
       category: "Article",
-      date: "March 6, 2026",
-      title: "Student Housing Access Control During Turn Season",
-      description: "Streamline student housing turn season with modern access control."
+      date: "March 12, 2026",
+      title: "How AI is Transforming IVF Patient Monitoring",
+      description: "Discover how artificial intelligence is improving medication adherence and clinical outcomes."
     },
     {
-      image: "https://images.pexels.com/photos/18435276/pexels-photo-18435276.jpeg?w=600",
-      category: "Article",
-      date: "March 6, 2026",
-      title: "Multifamily Access Control for Small Portfolios",
-      description: "Eliminate rekeying, reduce lockouts, and simplify property operations."
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600",
+      category: "Case Study",
+      date: "March 10, 2026",
+      title: "Surrogacy Agency Achieves 95% Compliance Rate",
+      description: "Learn how one agency uses OnePermit to monitor surrogates across multiple states."
     },
     {
-      image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600",
-      category: "Article",
-      date: "March 6, 2026",
-      title: "Access Control Is Infrastructure, Not Just Security",
-      description: "Learn how modern systems power building intelligence and automation."
+      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600",
+      category: "Guide",
+      date: "March 8, 2026",
+      title: "The Future of Remote Fertility Care",
+      description: "Exploring how digital platforms are enabling better outcomes in IVF and surrogacy."
     }
   ];
 
@@ -30,14 +30,14 @@ const ArticlesSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-gray-200 text-gray-700 text-sm font-medium rounded-full mb-6">
-            Recent insights
+            Latest Insights
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {articles.map((article, idx) => (
             <div key={idx} className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="aspect-[16/10] relative overflow-hidden bg-gray-100">
+              <div className="aspect-[16/10] relative overflow-hidden bg-gradient-to-br from-purple-50 to-pink-50">
                 <img 
                   src={article.image}
                   alt={article.title}
@@ -50,7 +50,7 @@ const ArticlesSection = () => {
                   <span>·</span>
                   <span>{article.date}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-snug group-hover:text-gray-600 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-snug group-hover:text-purple-600 transition-colors">
                   {article.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{article.description}</p>
@@ -60,7 +60,7 @@ const ArticlesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="inline-flex items-center space-x-2 text-gray-900 hover:text-gray-600 font-medium transition-colors">
+          <a href="#" className="inline-flex items-center space-x-2 text-gray-900 hover:text-purple-600 font-medium transition-colors">
             <span>All Insights</span>
             <span>→</span>
           </a>

@@ -3,16 +3,16 @@ import React from 'react';
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "AvalonBay's partnership with DOOR has unlocked real value. It has expanded touring hours, created maintenance efficiencies, and supported our operations evolution, creating a seamless, secure experience that makes day-to-day tasks easier for residents and management alike. As we look to the future of rental housing, partnerships like this are essential in building smarter, more connected communities.",
-      author: "David Madrid",
-      position: "VP of Innovation & Venture, AvalonBay Communities, Inc.",
-      company: "AVALONBAY\nCOMMUNITIES"
+      quote: "OnePermit has transformed how we monitor our IVF patients and surrogates. The real-time adherence tracking and AI risk detection have significantly improved our cycle success rates while reducing staff workload. It's become an essential part of our clinical workflow.",
+      author: "Dr. Sarah Chen",
+      position: "Medical Director, Fertility Institute of California",
+      company: "FERTILITY\nINSTITUTE"
     },
     {
-      quote: "We've evaluated smart access solutions globally and haven't found a better combination of hardware and software than what we've had with Latch. It's become standard across our developments. With DOOR, that foundation is evolving into something even more powerful, and we're excited to keep building with a platform that reflects where the industry is going.",
-      author: "Joey Letchinger",
-      position: "Executive Vice President, JDL Development",
-      company: "jdl."
+      quote: "As a surrogacy agency managing dozens of surrogates across multiple states, OnePermit gives us visibility we never had before. We can monitor compliance, track health trends, and keep intended parents informed—all in one platform. It's a game-changer for remote surrogate care.",
+      author: "Michael Rodriguez",
+      position: "CEO, Surrogacy Solutions Network",
+      company: "SSN"
     }
   ];
 
@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-16 text-center">
-          Trusted by leading multifamily owners and operators.
+          Trusted by leading fertility clinics and surrogacy agencies.
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
                   <p className="text-sm text-gray-600 mt-1">{testimonial.position}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-gray-900 whitespace-pre-line">
+                  <div className="text-2xl font-bold text-purple-600 whitespace-pre-line">
                     {testimonial.company}
                   </div>
                 </div>
