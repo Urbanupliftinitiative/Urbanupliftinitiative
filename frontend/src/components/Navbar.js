@@ -38,10 +38,17 @@ const Navbar = () => {
       <div className="w-full px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">O</span>
+            <div className="flex items-center space-x-1">
+              <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
+              <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">OnePermit</span>
+            <div className="flex flex-col">
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
+                <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
+              </div>
+            </div>
+            <span className="text-xl font-light text-gray-900">OnePermit</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-10">
