@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import BrandBanner from '../components/BrandBanner';
-import IntelligenceSection from '../components/IntelligenceSection';
-import TestimonialsSection from '../components/TestimonialsSection';
-import FeaturesSection from '../components/FeaturesSection';
-import ProductsGrid from '../components/ProductsGrid';
-import ParallaxSection from '../components/ParallaxSection';
-import StatsSection from '../components/StatsSection';
-import BenefitsSection from '../components/BenefitsSection';
-import FAQSection from '../components/FAQSection';
-import IntegrationsSection from '../components/IntegrationsSection';
-import ArticlesSection from '../components/ArticlesSection';
+import HeroSection from '../components/home/HeroSection';
+import BrandBanner from '../components/home/BrandBanner';
+import IntelligenceSection from '../components/home/IntelligenceSection';
+import TestimonialsSection from '../components/home/TestimonialsSection';
+import FeaturesSection from '../components/home/FeaturesSection';
+import ProductsCarousel from '../components/home/ProductsCarousel';
+import ValueProposition from '../components/home/ValueProposition';
+import StatsSection from '../components/home/StatsSection';
+import BenefitsSection from '../components/home/BenefitsSection';
+import FAQSection from '../components/home/FAQSection';
+import IntegrationsSection from '../components/home/IntegrationsSection';
+import ArticlesSection from '../components/home/ArticlesSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 
@@ -24,8 +24,8 @@ const HomePage = () => {
       <IntelligenceSection />
       <TestimonialsSection />
       <FeaturesSection />
-      <ProductsGrid />
-      <ParallaxSection />
+      <ProductsCarousel />
+      <ValueProposition />
       <StatsSection />
       <BenefitsSection />
       <FAQSection />
