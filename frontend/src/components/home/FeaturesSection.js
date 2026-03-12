@@ -25,21 +25,21 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-24">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-32">
+    <section className="py-32">
+      <div className="w-full px-12 lg:px-20 space-y-32">
         {features.map((feature, idx) => (
           <div key={idx} className={`rounded-[3rem] overflow-hidden ${feature.bgColor}`}>
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-12 lg:p-16 ${
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center p-16 lg:p-20 ${
               idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
             }`}>
-              <div className={`space-y-6 ${idx % 2 === 1 ? 'lg:order-2' : ''} ${feature.textured ? 'text-white' : ''}`}>
-                <h2 className={`text-4xl lg:text-5xl font-light leading-tight ${feature.textured ? 'text-white' : 'text-gray-900'}`}>
+              <div className={`space-y-8 ${idx % 2 === 1 ? 'lg:order-2' : ''} ${feature.textured ? 'text-white' : ''}`}>
+                <h2 className={`text-5xl lg:text-6xl xl:text-7xl font-light leading-tight ${feature.textured ? 'text-white' : 'text-gray-900'}`}>
                   {feature.title}
                 </h2>
-                <p className={`text-lg leading-relaxed ${feature.textured ? 'text-white' : 'text-gray-700'}`}>
+                <p className={`text-xl lg:text-2xl leading-relaxed ${feature.textured ? 'text-white' : 'text-gray-700'}`}>
                   {feature.description}
                 </p>
-                <Button className={`${feature.textured ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} rounded-full px-8 py-6 text-base font-medium transition-all`}>
+                <Button className={`${feature.textured ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} rounded-full px-10 py-7 text-lg font-medium transition-all`}>
                   Explore OnePermit
                 </Button>
               </div>

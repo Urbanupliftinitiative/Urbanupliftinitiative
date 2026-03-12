@@ -35,22 +35,22 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-md' : 'bg-white'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">O</span>
+      <div className="w-full px-12 lg:px-20">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">O</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">OnePermit</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">OnePermit</span>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-10">
             <div 
               className="relative"
               onMouseEnter={() => setOpenDropdown('products')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -60,7 +60,7 @@ const Navbar = () => {
                     <Link
                       key={idx}
                       to={item.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      className="block px-4 py-2 text-base text-gray-700 hover:bg-gray-50 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <a href="#articles" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+            <a href="#articles" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
               Articles
             </a>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown('company')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
                 <span>Company</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
                     <Link
                       key={idx}
                       to={item.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      className="block px-4 py-2 text-base text-gray-700 hover:bg-gray-50 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -97,29 +97,29 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/partners" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+            <Link to="/partners" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
               Partners
             </Link>
 
-            <a href="#support" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+            <a href="#support" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
               Support
             </a>
 
-            <a href="#login" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+            <a href="#login" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
               Manager Login
             </a>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-6">
             <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <Search className="w-5 h-5 text-gray-700" />
+              <Search className="w-6 h-6 text-gray-700" />
             </button>
-            <a href="#shop" className="text-gray-900 hover:text-gray-600 transition-colors text-sm font-medium">
+            <a href="#shop" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
               Shop
             </a>
             <Button 
               onClick={() => navigate('/talk-to-sales')}
-              className="bg-black hover:bg-gray-800 text-white rounded-full px-6 py-2 text-sm font-medium transition-all"
+              className="bg-black hover:bg-gray-800 text-white rounded-full px-7 py-3 text-base font-medium transition-all"
             >
               Book a demo →
             </Button>

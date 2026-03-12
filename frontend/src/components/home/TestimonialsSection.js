@@ -17,28 +17,28 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-16 text-center">
-          Trusted by leading fertility clinics and surrogacy agencies.
+    <section className="py-32 bg-gray-50">
+      <div className="w-full px-12 lg:px-20">
+        <h2 className="text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 mb-20 text-center leading-tight">
+          Trusted by leading multifamily owners and operators.
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {testimonials.map((testimonial, idx) => (
             <div 
               key={idx}
-              className="bg-white rounded-3xl p-8 lg:p-12 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-3xl p-10 lg:p-14 shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-10">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-start justify-between">
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900">{testimonial.author}</h4>
-                  <p className="text-sm text-gray-600 mt-1">{testimonial.position}</p>
+                  <h4 className="text-2xl font-semibold text-gray-900">{testimonial.author}</h4>
+                  <p className="text-base text-gray-600 mt-2">{testimonial.position}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-purple-600 whitespace-pre-line">
+                  <div className="text-3xl font-bold text-purple-600 whitespace-pre-line">
                     {testimonial.company}
                   </div>
                 </div>
