@@ -27,11 +27,11 @@ const HeroSection = () => {
       <div className="relative z-10 w-full px-12 lg:px-20 py-20 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-10">
-            <h1 className="text-6xl lg:text-8xl xl:text-9xl font-light text-gray-900 leading-[1.1]">
+            <h1 className="text-6xl lg:text-8xl xl:text-9xl font-extralight text-gray-900 leading-[1.1]">
               Your Partner in<br />
               IVF & Surrogacy Care
             </h1>
-            <p className="text-2xl lg:text-3xl xl:text-4xl text-gray-800 leading-relaxed">
+            <p className="text-2xl lg:text-3xl xl:text-4xl font-light text-gray-800 leading-relaxed">
               Unify patients, surrogates, clinics, and agencies into one intelligent care platform.
             </p>
             <Button 

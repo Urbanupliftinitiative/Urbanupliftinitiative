@@ -16,7 +16,7 @@ const BenefitsSection = () => {
           <div className="inline-block px-4 py-2 bg-purple-900 text-white text-sm font-medium rounded-full mb-6">
             Clinical Excellence
           </div>
-          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-6">
             Powering the Next Generation of Fertility Care.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

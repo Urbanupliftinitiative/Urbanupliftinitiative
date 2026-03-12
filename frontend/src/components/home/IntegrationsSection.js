@@ -8,7 +8,7 @@ const IntegrationsSection = () => {
           <div className="inline-block px-4 py-2 bg-gray-200 text-gray-700 text-sm font-medium rounded-full mb-6">
             Seamless Integration
           </div>
-          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-6">
             Integrate OnePermit with your EMR and Lab Systems
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

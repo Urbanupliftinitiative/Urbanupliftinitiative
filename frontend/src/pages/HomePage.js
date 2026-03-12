@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/home/HeroSection';
 import BrandBanner from '../components/home/BrandBanner';
 import IntelligenceSection from '../components/home/IntelligenceSection';
-import TestimonialsSection from '../components/home/TestimonialsSection';
+import AdvisorsSection from '../components/home/AdvisorsSection';
 import FeaturesSection from '../components/home/FeaturesSection';
 import ProductsCarousel from '../components/home/ProductsCarousel';
 import ValueProposition from '../components/home/ValueProposition';
@@ -22,7 +22,7 @@ const HomePage = () => {
       <HeroSection />
       <BrandBanner />
       <IntelligenceSection />
-      <TestimonialsSection />
+      <AdvisorsSection />
       <FeaturesSection />
       <ProductsCarousel />
       <ValueProposition />

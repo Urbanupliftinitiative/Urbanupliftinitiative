@@ -50,7 +50,7 @@ const ProductsCarousel = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 text-center">
+        <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-6 text-center">
           Everything your fertility journey needs, built to work together.
         </h2>
         <p className="text-xl text-gray-600 mb-16 text-center max-w-3xl mx-auto">

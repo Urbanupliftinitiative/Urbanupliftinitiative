@@ -33,10 +33,10 @@ const FeaturesSection = () => {
               idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
             }`}>
               <div className={`space-y-8 ${idx % 2 === 1 ? 'lg:order-2' : ''} ${feature.textured ? 'text-white' : ''}`}>
-                <h2 className={`text-5xl lg:text-6xl xl:text-7xl font-light leading-tight ${feature.textured ? 'text-white' : 'text-gray-900'}`}>
+                <h2 className={`text-5xl lg:text-6xl xl:text-7xl font-extralight leading-tight ${feature.textured ? 'text-white' : 'text-gray-900'}`}>
                   {feature.title}
                 </h2>
-                <p className={`text-xl lg:text-2xl leading-relaxed ${feature.textured ? 'text-white' : 'text-gray-700'}`}>
+                <p className={`text-xl lg:text-2xl font-light leading-relaxed ${feature.textured ? 'text-white' : 'text-gray-700'}`}>
                   {feature.description}
                 </p>
                 <Button className={`${feature.textured ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-transparent border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'} rounded-full px-10 py-7 text-lg font-medium transition-all`}>

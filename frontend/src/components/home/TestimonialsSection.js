@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
   return (
     <section className="py-32 bg-gray-50">
       <div className="w-full px-12 lg:px-20">
-        <h2 className="text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 mb-20 text-center leading-tight">
+        <h2 className="text-5xl lg:text-6xl xl:text-7xl font-extralight text-gray-900 mb-20 text-center leading-tight">
           Trusted by leading multifamily owners and operators.
         </h2>
 

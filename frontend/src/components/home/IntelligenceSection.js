@@ -9,10 +9,10 @@ const IntelligenceSection = () => {
       <div className="w-full px-12 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
-            <h2 className="text-6xl lg:text-7xl xl:text-8xl font-light text-gray-900 leading-[1.1]">
+            <h2 className="text-6xl lg:text-7xl xl:text-8xl font-extralight text-gray-900 leading-[1.1]">
               AI-Powered <br />Patient Monitoring
             </h2>
-            <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+            <p className="text-xl lg:text-2xl font-light text-gray-700 leading-relaxed">
               OnePermit connects medication tracking, vital monitoring, and appointment management 
               into one cohesive system. The result is greater visibility, improved adherence, and 
               better outcomes across every fertility journey.

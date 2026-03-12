@@ -8,7 +8,7 @@ const CTASection = () => {
     <section className="py-32 bg-gradient-to-br from-purple-200 via-pink-200 to-purple-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          <h2 className="text-4xl lg:text-5xl font-light text-gray-900 max-w-2xl">
+          <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 max-w-2xl">
             Talk to our team and transform your fertility care delivery.
           </h2>
           <button 
