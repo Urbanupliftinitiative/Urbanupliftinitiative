@@ -40,14 +40,13 @@ const features = [
   },
 ];
 
-/* ──────────────────── Card Content (shared by both layouts) ──────────────────── */
+/* ──────────── Card Content (shared) ──────────── */
 const CardContent = ({ feature, compact = false }) => {
   const navigate = useNavigate();
   const isDark = feature.dark;
 
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${compact ? 'p-6' : 'p-10 lg:p-16 xl:p-20'} items-center h-full`}>
-      {/* Left - Text */}
       <div className="space-y-5 lg:space-y-8">
         <h2
           data-testid={`feature-title-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
@@ -61,17 +60,11 @@ const CardContent = ({ feature, compact = false }) => {
         <Button
           data-testid={`feature-cta-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
           onClick={() => navigate('/talk-to-sales')}
-          className={`${
-            isDark
-              ? 'bg-white text-gray-900 hover:bg-gray-100'
-              : 'bg-gray-900 text-white hover:bg-gray-800'
-          } rounded-full ${compact ? 'px-6 py-4 text-sm' : 'px-10 py-6 lg:py-7 text-base lg:text-lg'} font-medium transition-all`}
+          className={`${isDark ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-gray-900 text-white hover:bg-gray-800'} rounded-full ${compact ? 'px-6 py-4 text-sm' : 'px-10 py-6 lg:py-7 text-base lg:text-lg'} font-medium transition-all`}
         >
           Explore OnePermit
         </Button>
       </div>
-
-      {/* Right - Icon grid */}
       <div className={`${compact ? '' : 'hidden lg:flex'} items-center justify-center`}>
         <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full max-w-md">
           {feature.icons.map(({ Icon, label, color }, i) => (
@@ -91,30 +84,81 @@ const CardContent = ({ feature, compact = false }) => {
   );
 };
 
-/* ──────────────────── Desktop: Sticky Overlap ──────────────────── */
-const DesktopStickyCards = () => (
-  <div className="hidden md:block pt-12" data-testid="features-desktop">
-    {features.map((feature, idx) => (
+/* ──────────── Desktop: Scroll-driven stacking cards ──────────── */
+const DesktopStickyCards = () => {
+  const containerRef = useRef(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const totalScroll = el.offsetHeight - window.innerHeight;
+      const p = Math.max(0, Math.min(1, -rect.top / totalScroll));
+      setProgress(p);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const numCards = features.length;
+  // Each transition takes 1/(numCards) of the total progress
+  const segmentSize = 1 / numCards;
+
+  return (
+    <div
+      ref={containerRef}
+      className="hidden md:block relative"
+      style={{ height: `${(numCards + 1) * 100}vh` }}
+      data-testid="features-desktop"
+    >
       <div
-        key={idx}
-        className={`sticky mx-8 lg:mx-12 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
+        className="sticky mx-8 lg:mx-12"
         style={{
-          position: 'sticky',
           top: '5rem',
-          zIndex: idx + 1,
           height: 'calc(100vh - 6rem)',
-          marginBottom: idx < features.length - 1 ? '60vh' : '0',
         }}
       >
-        <div className="flex flex-col justify-center h-full">
-          <CardContent feature={feature} />
+        <div className="relative w-full h-full">
+          {features.map((feature, idx) => {
+            let translateY = 0;
+            if (idx > 0) {
+              const transitionStart = (idx - 1) * segmentSize + segmentSize * 0.5;
+              const transitionEnd = idx * segmentSize + segmentSize * 0.3;
+              if (progress < transitionStart) {
+                translateY = 100;
+              } else if (progress >= transitionEnd) {
+                translateY = 0;
+              } else {
+                translateY = 100 * (1 - (progress - transitionStart) / (transitionEnd - transitionStart));
+              }
+            }
+
+            return (
+              <div
+                key={idx}
+                className={`absolute inset-0 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
+                style={{
+                  zIndex: idx + 1,
+                  transform: `translateY(${translateY}%)`,
+                  willChange: 'transform',
+                }}
+              >
+                <div className="flex flex-col justify-center h-full">
+                  <CardContent feature={feature} />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    ))}
-  </div>
-);
+    </div>
+  );
+};
 
-/* ──────────────────── Mobile: Slideshow ──────────────────── */
+/* ──────────── Mobile: Slideshow ──────────── */
 const MobileSlideshow = () => {
   const [current, setCurrent] = useState(0);
   const touchStart = useRef(0);
@@ -125,7 +169,6 @@ const MobileSlideshow = () => {
     setCurrent((idx + features.length) % features.length);
   }, []);
 
-  // Autoplay
   useEffect(() => {
     autoplayRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % features.length);
@@ -169,8 +212,6 @@ const MobileSlideshow = () => {
           ))}
         </div>
       </div>
-
-      {/* Navigation dots + arrows */}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
           data-testid="slideshow-prev"
@@ -179,20 +220,16 @@ const MobileSlideshow = () => {
         >
           <ChevronLeft className="w-5 h-5 text-gray-700" />
         </button>
-
         <div className="flex gap-2">
           {features.map((_, idx) => (
             <button
               key={idx}
               data-testid={`slideshow-dot-${idx}`}
               onClick={() => { goTo(idx); resetAutoplay(); }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === current ? 'w-8 bg-gray-900' : 'w-2 bg-gray-300'
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${idx === current ? 'w-8 bg-gray-900' : 'w-2 bg-gray-300'}`}
             />
           ))}
         </div>
-
         <button
           data-testid="slideshow-next"
           onClick={() => { goTo(current + 1); resetAutoplay(); }}
@@ -205,7 +242,7 @@ const MobileSlideshow = () => {
   );
 };
 
-/* ──────────────────── Main Export ──────────────────── */
+/* ──────────── Main Export ──────────── */
 const FeaturesSection = () => (
   <section data-testid="features-section">
     <DesktopStickyCards />
