@@ -37,18 +37,8 @@ const Navbar = () => {
     }`}>
       <div className="w-full px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="flex items-center space-x-1">
-              <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
-              <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
-                <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
-              </div>
-            </div>
-            <span className={`text-xl font-light transition-colors ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>OnePermit</span>
+          <Link to="/" className="flex items-center">
+            <span className="text-2xl font-bold text-gray-900">OnePermit</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-10">

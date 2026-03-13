@@ -46,18 +46,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
-                <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-purple-600 rounded-sm"></div>
-                  <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
-                </div>
-              </div>
-              <span className="text-2xl font-light text-gray-900">OnePermit</span>
+            <div className="mb-6">
+              <span className="text-2xl font-bold text-gray-900">OnePermit</span>
             </div>
             <p className="text-base font-light text-gray-600 mb-6 leading-relaxed">
               Transforming IVF and surrogacy care through intelligent monitoring and seamless collaboration.
