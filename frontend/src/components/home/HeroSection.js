@@ -24,25 +24,25 @@ const HeroSection = () => {
     <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-16">
       <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-1000 ${devices[currentDevice].gradient}`}></div>
       
-      <div className="relative z-10 w-full px-12 lg:px-20 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-extralight text-gray-900 leading-[1.1]">
+      <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extralight text-gray-900 leading-[1.1]">
               Your Partner in<br />
               IVF & Surrogacy Care
             </h1>
-            <p className="text-xl lg:text-2xl xl:text-3xl font-light text-gray-800 leading-relaxed">
+            <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-gray-800 leading-relaxed">
               Unify patients, surrogates, clinics, and agencies into one intelligent care platform.
             </p>
             <Button 
               onClick={() => navigate('/talk-to-sales')}
-              className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-6 text-base lg:text-lg font-medium transition-all shadow-lg hover:shadow-xl"
+              className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-5 md:px-8 md:py-6 text-base md:text-base lg:text-lg font-medium transition-all shadow-lg hover:shadow-xl w-full md:w-auto"
             >
               Request a demo →
             </Button>
           </div>
 
-          <div className="relative w-full h-[400px] lg:h-[500px] flex items-center justify-center">
+          <div className="hidden lg:flex relative w-full h-[400px] lg:h-[500px] items-center justify-center">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-white to-gray-100 rounded-[3rem] shadow-2xl transform transition-all duration-1000">
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 lg:w-56 lg:h-56 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-1000">
                 <div className="text-center">

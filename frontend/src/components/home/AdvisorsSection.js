@@ -25,28 +25,28 @@ const AdvisorsSection = () => {
   ];
 
   return (
-    <section className="py-32 bg-white">
-      <div className="w-full px-12 lg:px-20">
-        <h2 className="text-5xl lg:text-6xl font-extralight text-gray-900 mb-20">
+    <section className="py-16 md:py-24 lg:py-32 bg-white">
+      <div className="w-full px-6 md:px-12 lg:px-20">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extralight text-gray-900 mb-12 md:mb-16 lg:mb-20">
           Advised by Healthcare Veterans
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:gap-10">
           {advisors.map((advisor, idx) => (
             <div 
               key={idx}
-              className="bg-gray-50 rounded-2xl p-8 flex items-start space-x-6 hover:shadow-lg transition-shadow duration-300"
+              className="bg-gray-50 rounded-2xl p-6 md:p-8 flex items-start space-x-4 md:space-x-6 hover:shadow-lg transition-shadow duration-300"
             >
               <img 
                 src={advisor.image}
                 alt={advisor.name}
-                className="w-24 h-24 rounded-xl object-cover flex-shrink-0"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover flex-shrink-0"
               />
               <div className="flex-1">
-                <h3 className="text-xl font-light text-gray-900 mb-2">
+                <h3 className="text-lg md:text-xl font-light text-gray-900 mb-2">
                   {advisor.name}
                 </h3>
-                <p className="text-sm font-light text-gray-600 leading-relaxed">
+                <p className="text-sm md:text-sm font-light text-gray-600 leading-relaxed">
                   {advisor.title}
                 </p>
               </div>
