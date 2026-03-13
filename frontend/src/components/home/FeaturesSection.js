@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/button';
-import { Heart, Shield, Users, Activity, Lock, FileCheck, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Heart, Shield, Users, Activity, Lock, FileCheck, ChevronLeft, ChevronRight, Building2, BarChart3, ClipboardCheck, Clock } from 'lucide-react';
 
 const features = [
   {
@@ -36,6 +36,17 @@ const features = [
       { Icon: Shield, label: "HIPAA Compliant", color: "text-gray-700" },
       { Icon: FileCheck, label: "Audit Logging", color: "text-gray-800" },
       { Icon: Users, label: "RBAC", color: "text-gray-700" },
+    ],
+  },
+  {
+    title: "Built for Clinics & Agencies",
+    description: "Empower fertility clinics and surrogacy agencies with centralized dashboards, real-time case tracking, and automated compliance reporting\u2014so your team can focus on outcomes, not paperwork.",
+    bgClass: "bg-gradient-to-br from-[#e8d5e8] via-[#d8c5d8] to-[#b8a5b8]",
+    icons: [
+      { Icon: Building2, label: "Clinic Dashboard", color: "text-purple-600" },
+      { Icon: BarChart3, label: "Case Analytics", color: "text-fuchsia-600" },
+      { Icon: ClipboardCheck, label: "Compliance Reports", color: "text-pink-600" },
+      { Icon: Clock, label: "Workflow Automation", color: "text-violet-600" },
     ],
   },
 ];
