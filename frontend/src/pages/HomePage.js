@@ -1,7 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/home/HeroSection';
-import BrandBanner from '../components/home/BrandBanner';
 import IntelligenceSection from '../components/home/IntelligenceSection';
 import AdvisorsSection from '../components/home/AdvisorsSection';
 import FeaturesSection from '../components/home/FeaturesSection';
@@ -20,7 +19,6 @@ const HomePage = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
-      <BrandBanner />
       <IntelligenceSection />
       <AdvisorsSection />
       <FeaturesSection />
