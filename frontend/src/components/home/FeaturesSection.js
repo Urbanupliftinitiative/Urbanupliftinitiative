@@ -93,20 +93,21 @@ const CardContent = ({ feature, compact = false }) => {
 
 /* ──────────────────── Desktop: Sticky Overlap ──────────────────── */
 const DesktopStickyCards = () => (
-  <div className="hidden md:block" data-testid="features-desktop">
+  <div className="hidden md:block pt-12" data-testid="features-desktop">
     {features.map((feature, idx) => (
-      <div key={idx} className="h-screen" style={{ marginBottom: idx === features.length - 1 ? 0 : '-1px' }}>
-        <div
-          className={`sticky mx-8 lg:mx-12 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
-          style={{
-            zIndex: idx + 1,
-            top: '5rem',
-            height: 'calc(100vh - 6rem)',
-          }}
-        >
-          <div className="flex flex-col justify-center h-full">
-            <CardContent feature={feature} />
-          </div>
+      <div
+        key={idx}
+        className={`sticky mx-8 lg:mx-12 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
+        style={{
+          position: 'sticky',
+          top: '5rem',
+          zIndex: idx + 1,
+          height: 'calc(100vh - 6rem)',
+          marginBottom: idx < features.length - 1 ? '60vh' : '0',
+        }}
+      >
+        <div className="flex flex-col justify-center h-full">
+          <CardContent feature={feature} />
         </div>
       </div>
     ))}
