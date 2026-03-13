@@ -95,12 +95,16 @@ const CardContent = ({ feature, compact = false }) => {
 const DesktopStickyCards = () => (
   <div className="hidden md:block" data-testid="features-desktop">
     {features.map((feature, idx) => (
-      <div key={idx} className="h-screen">
+      <div key={idx} className="h-screen" style={{ marginBottom: idx === features.length - 1 ? 0 : '-1px' }}>
         <div
-          className={`sticky top-6 mx-6 lg:mx-12 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
-          style={{ zIndex: idx + 1, minHeight: '85vh' }}
+          className={`sticky mx-8 lg:mx-12 rounded-[2rem] overflow-hidden ${feature.bgClass}`}
+          style={{
+            zIndex: idx + 1,
+            top: '5rem',
+            height: 'calc(100vh - 6rem)',
+          }}
         >
-          <div className="flex flex-col justify-center h-full" style={{ minHeight: '85vh' }}>
+          <div className="flex flex-col justify-center h-full">
             <CardContent feature={feature} />
           </div>
         </div>
