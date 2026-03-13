@@ -1,95 +1,107 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../ui/button';
-import { Heart, Shield, Users, Activity, Lock, FileCheck, ChevronLeft, ChevronRight, Building2, BarChart3, ClipboardCheck, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const features = [
   {
     title: "Patient-Centered Care",
     description: "Our platform combines intuitive design with powerful functionality. We create solutions that integrate seamlessly with existing clinical workflows and empower patients throughout their fertility journey.",
     bgClass: "bg-gradient-to-br from-[#ede4ed] via-[#ddd0dd] to-[#c4b4c4]",
-    icons: [
-      { Icon: Heart, label: "Wellness Tracking", color: "text-pink-500" },
-      { Icon: Activity, label: "Vitals Monitor", color: "text-purple-500" },
-      { Icon: Users, label: "Family Support", color: "text-rose-400" },
-      { Icon: FileCheck, label: "Care Plans", color: "text-fuchsia-500" },
+    images: [
+      { src: "https://images.unsplash.com/photo-1762768767074-e491f1eebdfc?w=400&h=400&fit=crop", alt: "Wellness Tracking" },
+      { src: "https://images.unsplash.com/photo-1645685491865-42a4fbbc9912?w=400&h=400&fit=crop", alt: "Vitals Monitor" },
+      { src: "https://images.unsplash.com/photo-1709823157693-c63157807cc3?w=400&h=400&fit=crop", alt: "Family Support" },
+      { src: "https://images.unsplash.com/photo-1659353888242-e7c29b331c61?w=400&h=400&fit=crop", alt: "Care Plans" },
     ],
   },
   {
     title: "Unified Care Platform",
     description: "OnePermit makes fertility care simple, connecting patients, surrogates, clinics, and agencies. Our intelligent system tracks medications, monitors vitals, and automates workflows\u2014helping teams reduce risk and scale efficiency.",
     bgClass: "bg-gradient-to-br from-[#dce8f0] via-[#ccd8e4] to-[#afc0ce]",
-    icons: [
-      { Icon: Users, label: "Multi-Role Access", color: "text-blue-500" },
-      { Icon: Activity, label: "Real-Time Sync", color: "text-cyan-500" },
-      { Icon: FileCheck, label: "Smart Workflows", color: "text-teal-500" },
-      { Icon: Heart, label: "Patient Connect", color: "text-sky-500" },
+    images: [
+      { src: "https://images.unsplash.com/photo-1672917187338-7f81ecac3d3f?w=400&h=400&fit=crop", alt: "Multi-Role Access" },
+      { src: "https://images.unsplash.com/photo-1758691461916-dc7894eb8f94?w=400&h=400&fit=crop", alt: "Real-Time Sync" },
+      { src: "https://images.unsplash.com/photo-1758691463610-3c2ecf5fb3fa?w=400&h=400&fit=crop", alt: "Smart Workflows" },
+      { src: "https://images.unsplash.com/photo-1744686910398-426ab2a0ce8d?w=400&h=400&fit=crop", alt: "Patient Connect" },
     ],
   },
   {
     title: "Enterprise-Grade Security",
     description: "Safeguard patient data at every touchpoint with HIPAA-compliant encryption, role-based access controls, and comprehensive audit logging\u2014because trust is the foundation of fertility care.",
     bgClass: "bg-gradient-to-br from-[#b8b3a4] via-[#9a9589] to-[#7a756a]",
-    dark: false,
-    icons: [
-      { Icon: Lock, label: "Encryption", color: "text-gray-800" },
-      { Icon: Shield, label: "HIPAA Compliant", color: "text-gray-700" },
-      { Icon: FileCheck, label: "Audit Logging", color: "text-gray-800" },
-      { Icon: Users, label: "RBAC", color: "text-gray-700" },
+    images: [
+      { src: "https://images.unsplash.com/photo-1767972464040-8bfee42d7bed?w=400&h=400&fit=crop", alt: "Encryption" },
+      { src: "https://images.unsplash.com/photo-1722235623200-59966a71af50?w=400&h=400&fit=crop", alt: "HIPAA Compliant" },
+      { src: "https://images.unsplash.com/photo-1768839722988-91767bb82b10?w=400&h=400&fit=crop", alt: "Audit Logging" },
+      { src: "https://images.unsplash.com/photo-1585079374502-415f8516dcc3?w=400&h=400&fit=crop", alt: "RBAC" },
     ],
   },
   {
     title: "Built for Clinics & Agencies",
     description: "Empower fertility clinics and surrogacy agencies with centralized dashboards, real-time case tracking, and automated compliance reporting\u2014so your team can focus on outcomes, not paperwork.",
     bgClass: "bg-gradient-to-br from-[#e8d5e8] via-[#d8c5d8] to-[#b8a5b8]",
-    icons: [
-      { Icon: Building2, label: "Clinic Dashboard", color: "text-purple-600" },
-      { Icon: BarChart3, label: "Case Analytics", color: "text-fuchsia-600" },
-      { Icon: ClipboardCheck, label: "Compliance Reports", color: "text-pink-600" },
-      { Icon: Clock, label: "Workflow Automation", color: "text-violet-600" },
+    images: [
+      { src: "https://images.unsplash.com/photo-1698306642516-9841228dcff3?w=400&h=400&fit=crop", alt: "Clinic Dashboard" },
+      { src: "https://images.unsplash.com/photo-1666886573212-2de95596d509?w=400&h=400&fit=crop", alt: "Case Analytics" },
+      { src: "https://images.unsplash.com/photo-1631039302217-5a6c56371e86?w=400&h=400&fit=crop", alt: "Compliance Reports" },
+      { src: "https://images.unsplash.com/photo-1626204717650-96d57481eeb3?w=400&h=400&fit=crop", alt: "Workflow Automation" },
     ],
   },
 ];
 
+/* ──────────── Image Grid (door.com style 2x2) ──────────── */
+const ImageGrid = ({ images, compact = false }) => (
+  <div className={`grid grid-cols-2 ${compact ? 'gap-2' : 'gap-3 lg:gap-4'} w-full max-w-lg`}>
+    {images.map((img, i) => (
+      <div
+        key={i}
+        className={`bg-white rounded-2xl ${compact ? 'rounded-xl' : 'lg:rounded-3xl'} overflow-hidden shadow-md aspect-square`}
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+);
+
 /* ──────────── Card Content (shared) ──────────── */
 const CardContent = ({ feature, compact = false }) => {
   const navigate = useNavigate();
-  const isDark = feature.dark;
 
   return (
-    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${compact ? 'p-6' : 'p-10 lg:p-16 xl:p-20'} items-center h-full`}>
-      <div className="space-y-5 lg:space-y-8">
-        <h2
-          data-testid={`feature-title-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
-          className={`${compact ? 'text-3xl' : 'text-4xl sm:text-5xl lg:text-6xl xl:text-7xl'} font-extralight leading-tight ${isDark ? 'text-white' : 'text-gray-900'}`}
-        >
-          {feature.title}
-        </h2>
-        <p className={`${compact ? 'text-base' : 'text-lg lg:text-xl xl:text-2xl'} font-light leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-          {feature.description}
-        </p>
-        <Button
-          data-testid={`feature-cta-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
-          onClick={() => navigate('/talk-to-sales')}
-          className={`${isDark ? 'bg-white text-gray-900 hover:bg-gray-100' : 'bg-gray-900 text-white hover:bg-gray-800'} rounded-full ${compact ? 'px-6 py-4 text-sm' : 'px-10 py-6 lg:py-7 text-base lg:text-lg'} font-medium transition-all`}
-        >
-          Explore OnePermit
-        </Button>
-      </div>
-      <div className={`${compact ? '' : 'hidden lg:flex'} items-center justify-center`}>
-        <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full max-w-md">
-          {feature.icons.map(({ Icon, label, color }, i) => (
-            <div
-              key={i}
-              className={`${isDark ? 'bg-white/10 backdrop-blur-sm' : 'bg-white/80 backdrop-blur-sm'} rounded-2xl lg:rounded-3xl p-5 lg:p-8 flex flex-col items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1`}
-            >
-              <Icon className={`${compact ? 'w-7 h-7' : 'w-8 h-8 lg:w-12 lg:h-12'} ${color}`} />
-              <span className={`${compact ? 'text-xs' : 'text-xs lg:text-sm'} font-medium ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
-                {label}
-              </span>
-            </div>
-          ))}
+    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 ${compact ? 'p-6' : 'p-10 lg:p-16 xl:p-20'} items-center h-full`}>
+      {/* Left - Text */}
+      <div className="flex flex-col justify-between h-full py-4">
+        <div className="space-y-5 lg:space-y-8">
+          <h2
+            data-testid={`feature-title-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
+            className={`${compact ? 'text-2xl' : 'text-3xl sm:text-4xl lg:text-5xl xl:text-6xl'} font-extralight leading-tight text-gray-900`}
+          >
+            {feature.title}
+          </h2>
+          <p className={`${compact ? 'text-sm' : 'text-base lg:text-lg xl:text-xl'} font-light leading-relaxed text-gray-700`}>
+            {feature.description}
+          </p>
         </div>
+        <div className="mt-8">
+          <Button
+            data-testid={`feature-cta-${feature.title.toLowerCase().replace(/\s+/g, '-')}`}
+            onClick={() => navigate('/talk-to-sales')}
+            className="bg-gray-900 text-white hover:bg-gray-800 rounded-full px-8 py-5 lg:px-10 lg:py-6 text-sm lg:text-base font-medium transition-all"
+          >
+            Explore OnePermit
+          </Button>
+        </div>
+      </div>
+
+      {/* Right - 2x2 Image Grid */}
+      <div className="flex items-center justify-center">
+        <ImageGrid images={feature.images} compact={compact} />
       </div>
     </div>
   );
@@ -115,7 +127,6 @@ const DesktopStickyCards = () => {
   }, []);
 
   const numCards = features.length;
-  // Each transition takes 1/(numCards) of the total progress
   const segmentSize = 1 / numCards;
 
   return (
@@ -126,11 +137,8 @@ const DesktopStickyCards = () => {
       data-testid="features-desktop"
     >
       <div
-        className="sticky mx-8 lg:mx-12"
-        style={{
-          top: '5rem',
-          height: 'calc(100vh - 6rem)',
-        }}
+        className="sticky mx-6 lg:mx-10"
+        style={{ top: '1.5rem', height: 'calc(100vh - 3rem)' }}
       >
         <div className="relative w-full h-full">
           {features.map((feature, idx) => {
