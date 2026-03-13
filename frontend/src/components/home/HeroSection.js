@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, [devices.length]);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
       <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-1000 ${devices[currentDevice].gradient}`}></div>
       
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 py-12 md:py-16 lg:py-24">
