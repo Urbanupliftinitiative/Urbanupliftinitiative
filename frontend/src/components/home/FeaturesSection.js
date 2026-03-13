@@ -29,13 +29,13 @@ const features = [
   {
     title: "Enterprise-Grade Security",
     description: "Safeguard patient data at every touchpoint with HIPAA-compliant encryption, role-based access controls, and comprehensive audit logging\u2014because trust is the foundation of fertility care.",
-    bgClass: "bg-gradient-to-br from-[#2d2d2d] via-[#3a3a3a] to-[#1a1a1a]",
-    dark: true,
+    bgClass: "bg-gradient-to-br from-[#b8b3a4] via-[#9a9589] to-[#7a756a]",
+    dark: false,
     icons: [
-      { Icon: Lock, label: "Encryption", color: "text-emerald-400" },
-      { Icon: Shield, label: "HIPAA Compliant", color: "text-green-400" },
-      { Icon: FileCheck, label: "Audit Logging", color: "text-lime-400" },
-      { Icon: Users, label: "RBAC", color: "text-teal-400" },
+      { Icon: Lock, label: "Encryption", color: "text-gray-800" },
+      { Icon: Shield, label: "HIPAA Compliant", color: "text-gray-700" },
+      { Icon: FileCheck, label: "Audit Logging", color: "text-gray-800" },
+      { Icon: Users, label: "RBAC", color: "text-gray-700" },
     ],
   },
 ];
