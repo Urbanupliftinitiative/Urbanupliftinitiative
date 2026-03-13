@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="mb-6">
-              <span className="text-2xl font-bold text-gray-900">OnePermit</span>
+              <span className="text-2xl font-medium text-gray-900">OnePermit</span>
             </div>
             <p className="text-base font-light text-gray-600 mb-6 leading-relaxed">
               Transforming IVF and surrogacy care through intelligent monitoring and seamless collaboration.

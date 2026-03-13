@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="w-full px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gray-900">OnePermit</span>
+            <span className="text-2xl font-medium text-gray-900">OnePermit</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-10">
