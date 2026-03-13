@@ -21,16 +21,6 @@ const AdvisorsSection = () => {
       name: "Emily Thompson, RN, CNM",
       title: "UCSF Reproductive Health, Johns Hopkins Fertility Clinic",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400"
-    },
-    {
-      name: "Dr. David Kim, MD, FACOG",
-      title: "Yale Fertility Center, Columbia University Medical Center",
-      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400"
-    },
-    {
-      name: "Rachel Foster, MPH",
-      title: "Stanford Healthcare, Surrogacy Program Director, Women's Health Specialist",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
     }
   ];
 
