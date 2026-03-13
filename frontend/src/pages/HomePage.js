@@ -5,8 +5,6 @@ import IntelligenceSection from '../components/home/IntelligenceSection';
 import AdvisorsSection from '../components/home/AdvisorsSection';
 import FeaturesSection from '../components/home/FeaturesSection';
 import FAQSection from '../components/home/FAQSection';
-import IntegrationsSection from '../components/home/IntegrationsSection';
-import ArticlesSection from '../components/home/ArticlesSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 
@@ -19,8 +17,6 @@ const HomePage = () => {
       <AdvisorsSection />
       <FeaturesSection />
       <FAQSection />
-      <IntegrationsSection />
-      <ArticlesSection />
       <CTASection />
       <Footer />
     </div>
