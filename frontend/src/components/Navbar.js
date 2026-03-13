@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-white'
+      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
     }`}>
       <div className="w-full px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div className="w-2 h-2 bg-pink-600 rounded-sm"></div>
               </div>
             </div>
-            <span className="text-xl font-light text-gray-900">OnePermit</span>
+            <span className={`text-xl font-light transition-colors ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>OnePermit</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-10">
@@ -57,7 +57,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown('products')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+              <button className={`flex items-center space-x-1 hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -76,7 +76,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <a href="#articles" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+            <a href="#articles" className={`hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Articles
             </a>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
               onMouseEnter={() => setOpenDropdown('company')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+              <button className={`flex items-center space-x-1 hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
                 <span>Company</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -104,24 +104,24 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/partners" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+            <Link to="/partners" className={`hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Partners
             </Link>
 
-            <a href="#support" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+            <a href="#support" className={`hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Support
             </a>
 
-            <a href="#login" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+            <a href="#login" className={`hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Manager Login
             </a>
           </div>
 
           <div className="hidden lg:flex items-center space-x-6">
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <Search className="w-6 h-6 text-gray-700" />
+            <button className={`p-2 hover:bg-white/20 rounded-full transition-colors ${isScrolled ? '' : 'hover:bg-white/10'}`}>
+              <Search className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-gray-900'}`} />
             </button>
-            <a href="#shop" className="text-gray-900 hover:text-gray-600 transition-colors text-base font-medium">
+            <a href="#shop" className={`hover:text-gray-600 transition-colors text-base font-medium ${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>
               Shop
             </a>
             <Button 
