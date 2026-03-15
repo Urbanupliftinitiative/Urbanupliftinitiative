@@ -1,5 +1,4 @@
 import React from 'react';
-import LandingNavbar from '../components/landing/LandingNavbar';
 import SecuritySection from '../components/landing/SecuritySection';
 import AboutSection from '../components/landing/AboutSection';
 import TabsSection from '../components/landing/TabsSection';
@@ -14,7 +13,6 @@ import FooterSection from '../components/landing/FooterSection';
 
 const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
-    <LandingNavbar />
     <SecuritySection />
     <AboutSection />
     <TabsSection />

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const SecuritySection = () => (
   <section
     data-testid="security-section"
-    className="pt-24 md:pt-28 pb-8 px-6 bg-white"
+    className="pt-6 pb-8 px-6 bg-white"
   >
     <motion.div
       className="max-w-[1440px] mx-auto rounded-[32px] md:rounded-[40px] overflow-hidden relative"
