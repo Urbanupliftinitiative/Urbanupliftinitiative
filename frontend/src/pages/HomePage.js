@@ -1,7 +1,6 @@
 import React from 'react';
 import LandingNavbar from '../components/landing/LandingNavbar';
 import HeroSection from '../components/landing/HeroSection';
-import MarqueeSection from '../components/landing/MarqueeSection';
 import AboutSection from '../components/landing/AboutSection';
 import TabsSection from '../components/landing/TabsSection';
 import CommunitySection from '../components/landing/CommunitySection';
@@ -14,7 +13,6 @@ const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
     <LandingNavbar />
     <HeroSection />
-    <MarqueeSection />
     <AboutSection />
     <TabsSection />
     <CommunitySection />
