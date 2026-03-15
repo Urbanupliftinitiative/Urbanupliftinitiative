@@ -49,9 +49,9 @@ const HalideTopo = () => {
     <>
       <style>{`
         .halide-hero {
-          --bg: #0a0a0a;
-          --silver: #e0e0e0;
-          --accent: #c4aec4;
+          --bg: #d8c4d8;
+          --silver: #ffffff;
+          --accent: #8a708a;
           background-color: var(--bg);
           color: var(--silver);
           font-family: 'Sora', sans-serif;
@@ -94,18 +94,18 @@ const HalideTopo = () => {
         }
         .halide-layer-1 {
           background-image: url('${PREGNANT_IMG}');
-          filter: grayscale(0.6) contrast(1.1) brightness(0.6);
+          filter: grayscale(0.4) contrast(1.05) brightness(0.75);
         }
         .halide-layer-2 {
           background-image: url('${LAYER2_IMG}');
-          filter: grayscale(0.8) contrast(1.1) brightness(0.7);
-          opacity: 0.5;
-          mix-blend-mode: screen;
+          filter: grayscale(0.5) contrast(1.05) brightness(0.8);
+          opacity: 0.45;
+          mix-blend-mode: multiply;
         }
         .halide-layer-3 {
           background-image: url('${LAYER3_IMG}');
-          filter: grayscale(1) contrast(1.3) brightness(0.8);
-          opacity: 0.35;
+          filter: grayscale(0.6) contrast(1.2) brightness(0.85);
+          opacity: 0.3;
           mix-blend-mode: overlay;
         }
         .halide-contours {
