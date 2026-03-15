@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const SecuritySection = () => (
   <section
     data-testid="security-section"
-    className="min-h-screen flex items-center pt-20 px-6"
+    className="min-h-screen flex items-start pt-24 md:pt-28 px-6"
     style={{ background: '#EAE6F1' }}
   >
     <motion.div
