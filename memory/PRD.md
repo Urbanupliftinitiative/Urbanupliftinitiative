@@ -1,70 +1,100 @@
 # OnePermit - Product Requirements Document
 
 ## Original Problem Statement
-Build a pixel-perfect landing page for "OnePermit," a unified IVF and surrogacy care platform. The design is a hybrid of door.com's interactive layout and kaigohealth.ai's clean typography aesthetic.
+OnePermit is a unified IVF and surrogacy care accountability and monitoring platform. The website was rebuilt from the ground up with a design paradigm inspired by `tyb.xyz` and Apple's latest neo-MacBook design language — focused on joy, comfort, and celebration for women on IVF and surrogacy journeys.
 
 ## Core User Personas
-- IVF patients, surrogates, intended parents, clinics, and agencies
+- IVF patients
+- Surrogates  
+- Intended parents
+- Fertility clinics
+- Surrogacy agencies
 
-## Core Features (Landing Page - Current Phase)
-- Hero section with full-viewport gradient
-- Healthcare intelligence dashboard mockup
-- Advisors section (4 healthcare veterans)
-- **Scroll-driven stacking feature cards** (door.com style overlap effect)
-  - Patient-Centered Care (purple gradient)
-  - Unified Care Platform (blue gradient)
-  - Enterprise-Grade Security (dark gradient)
-  - Desktop: scroll-driven overlap with sticky positioning
-  - Mobile: swipeable slideshow with auto-play
-- FAQ accordion section
-- CTA section
-- Clean modern footer
+## Core Features
+- Medication/injection management with smart reminders
+- Daily health/vital tracking with clinic sync
+- Clinic integration and remote monitoring
+- Family/partner support portal
+- Multi-role dashboards
+
+## Design Philosophy
+- **Emotional Tone:** Joyful, celebratory, warm, inviting — NOT clinical
+- **Visual Style:** Apple neo-MacBook minimalism + tyb.xyz playfulness
+- **Key Elements:** Liquid glass effects, floating 3D objects, massive typography, warm pastel palette
+- **Font:** Sora (Google Fonts)
+- **Color Palette:** Lavender (#E6E6FA), Peach (#FFDAB9), Soft Pink (#FFB7B2), Cream, Blue (#E0F7FA), Navy (#1A1A2E)
+
+## What's Been Implemented (Feb 2026)
+
+### Complete Homepage Redesign - DONE
+All 10 sections built and tested:
+1. **LandingNavbar** - Fixed, glass-morphism on scroll, mobile responsive menu
+2. **HeroSection** - Gradient background, massive "your journey deserves to be celebrated" headline, 4 floating 3D elements (heart, baby bottle, pill, star), 2 CTAs
+3. **MarqueeSection** - Infinite scrolling partner names
+4. **AboutSection** - Massive uppercase text "TRACK CARE. SHARE MILESTONES.", floating lifestyle images
+5. **TabsSection** - 3 tabs (Track/Monitor/Support) with animated content switching and app UI mockups
+6. **CommunitySection** - 6 horizontally scrollable clinic/agency cards with pastel backgrounds
+7. **TestimonialsSection** - 3 gradient cards with patient/surrogate quotes and portraits
+8. **BenefitsSection** - 3x2 grid of feature cards (Smart Reminders, Vitals Dashboard, Clinic Integration, Family Portal, Milestone Tracker, Secure & Private)
+9. **CTASection** - Liquid glass CTA card with decorative blurs
+10. **FooterSection** - Logo, 4 link columns, social links, copyright
+
+### Tech Stack
+- React 19 + React Router
+- TailwindCSS with custom design tokens
+- Framer Motion v12 for animations
+- Shadcn/UI components available
+- Sora font (Google Fonts)
 
 ## Architecture
 ```
 /app/frontend/src/
-├── components/
-│   ├── home/
-│   │   ├── HeroSection.js
-│   │   ├── IntelligenceSection.js
-│   │   ├── AdvisorsSection.js
-│   │   ├── FeaturesSection.js  ← Scroll-driven stacking cards
-│   │   ├── FAQSection.js
-│   │   └── CTASection.js
-│   ├── Navbar.js
-│   └── ui/ (shadcn components)
+├── components/landing/     # NEW - All landing page sections
+│   ├── LandingNavbar.js
+│   ├── HeroSection.js
+│   ├── MarqueeSection.js
+│   ├── AboutSection.js
+│   ├── TabsSection.js
+│   ├── CommunitySection.js
+│   ├── TestimonialsSection.js
+│   ├── BenefitsSection.js
+│   ├── CTASection.js
+│   └── FooterSection.js
+├── components/home/        # OLD - Previous design (deprecated)
 ├── pages/
-│   └── HomePage.js
-├── App.js
-└── App.css
+│   └── HomePage.js         # Main page composing all landing sections
+├── index.css               # Updated with OnePermit design system
+└── App.js
 ```
 
-## What's Been Implemented
-- [x] door.com clone → OnePermit rebrand
-- [x] kaigohealth.ai typography/aesthetic
-- [x] Full-width layout with proper font sizes
-- [x] Transparent navbar blending into hero
-- [x] Compact hero section (min-h-screen)
-- [x] Removed unused sections (Products Carousel, Stats, Benefits, etc.)
-- [x] Advisors section (4 healthcare veterans)
-- [x] Redesigned footer (white background, clean modern)
-- [x] Bold clean wordmark logo
-- [x] **Scroll-driven stacking feature cards** (door.com overlap effect)
-  - All 3 cards overlap correctly on desktop
-  - Mobile slideshow with swipe + auto-play
-  - Enterprise-Grade Security (dark card) fully scrolls to top
+## Testing Status
+- Frontend: 100% pass rate (12/12 tests)
+- All sections render correctly
+- Mobile responsiveness verified (375px)
+- Tab interactions work
+- Anchor navigation works
+- All data-testid attributes present
 
-## Pending / In Progress
-- [ ] Mobile responsiveness for all sections (P0)
-- [ ] Products page (P1)
-- [ ] Talk to Sales / Request a Demo page (P1)
+## Prioritized Backlog
 
-## Future / Backlog
-- [ ] Backend development (FastAPI + MongoDB)
-- [ ] Authentication with RBAC
-- [ ] Core platform features (Medication Mgmt, Vitals Tracking, Document Vault)
-- [ ] Multi-role dashboards
+### P0 - Next Up
+- Clean up old components (/components/home/, /components/onepermit/)
 
-## Tech Stack
-- Frontend: React, TailwindCSS, Shadcn/UI, React Router
-- Backend: FastAPI + MongoDB (planned)
+### P1 - Upcoming
+- Build Products page
+- Build Talk to Sales page  
+- Build Partners page
+- Implement sub-page navigation
+
+### P2 - Future
+- Backend development (FastAPI + MongoDB)
+- User authentication system
+- Data models and CRUD APIs
+- Core platform features:
+  - Medication Management module
+  - Vitals Tracking module
+  - Multi-role dashboards (patient, surrogate, parent, clinic, agency)
+  - Clinic integration APIs
+
+## All Content is MOCKED
+No backend functionality exists. All data on the landing page is hardcoded placeholder content.
