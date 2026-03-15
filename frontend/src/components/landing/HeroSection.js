@@ -83,7 +83,7 @@ const HeroSection = () => {
   return (
     <section
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-12"
+      className="relative flex items-center overflow-hidden py-16 md:py-24 px-6"
       style={{ background: '#EAE6F1' }}
     >
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">

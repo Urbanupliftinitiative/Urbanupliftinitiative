@@ -1,9 +1,9 @@
 import React from 'react';
 import LandingNavbar from '../components/landing/LandingNavbar';
-import HeroSection from '../components/landing/HeroSection';
+import SecuritySection from '../components/landing/SecuritySection';
 import AboutSection from '../components/landing/AboutSection';
 import TabsSection from '../components/landing/TabsSection';
-import SecuritySection from '../components/landing/SecuritySection';
+import HeroSection from '../components/landing/HeroSection';
 import CommunitySection from '../components/landing/CommunitySection';
 import TestimonialsSection from '../components/landing/TestimonialsSection';
 import BenefitsSection from '../components/landing/BenefitsSection';
@@ -15,10 +15,10 @@ import FooterSection from '../components/landing/FooterSection';
 const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
     <LandingNavbar />
-    <HeroSection />
+    <SecuritySection />
     <AboutSection />
     <TabsSection />
-    <SecuritySection />
+    <HeroSection />
     <CommunitySection />
     <TestimonialsSection />
     <BenefitsSection />
