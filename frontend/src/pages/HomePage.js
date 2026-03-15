@@ -1,4 +1,5 @@
 import React from 'react';
+import AccordionHero from '../components/landing/AccordionHero';
 import SecuritySection from '../components/landing/SecuritySection';
 import AboutSection from '../components/landing/AboutSection';
 import TabsSection from '../components/landing/TabsSection';
@@ -13,6 +14,7 @@ import FooterSection from '../components/landing/FooterSection';
 
 const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
+    <AccordionHero />
     <SecuritySection />
     <AboutSection />
     <TabsSection />

@@ -2,26 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const SecuritySection = () => (
-  <section
-    data-testid="security-section"
-    className="pt-6 pb-8 px-6 bg-white"
-  >
+  <section data-testid="security-section" className="py-12 md:py-16 px-6 bg-white">
     <motion.div
       className="max-w-[1440px] mx-auto rounded-[32px] md:rounded-[40px] overflow-hidden relative"
       style={{ background: 'linear-gradient(160deg, #d8c4d8 0%, #cdb8cd 40%, #c4aec4 70%, #baA4ba 100%)' }}
       initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.7 }}
     >
       <div className="px-8 sm:px-12 md:px-16 lg:px-20 py-16 md:py-20 lg:py-24">
-        <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white/90 tracking-tight leading-[0.95] mb-6 md:mb-8 max-w-lg"
+        <h2
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white/90 tracking-tight leading-[0.95] mb-6 md:mb-8 max-w-lg"
         >
           HIPAA-Compliant
           <br />
           Security
-        </h1>
-        <p className="text-base md:text-lg lg:text-xl text-white/60 leading-relaxed max-w-md mb-8 md:mb-10">
+        </h2>
+        <p className="text-base md:text-lg text-white/60 leading-relaxed max-w-md mb-8 md:mb-10">
           Safeguard patient data at every touchpoint with
           enterprise-grade encryption, role-based access
           controls, and comprehensive audit logging.
