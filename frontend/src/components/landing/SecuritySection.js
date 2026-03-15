@@ -4,17 +4,16 @@ import { motion } from 'framer-motion';
 const SecuritySection = () => (
   <section
     data-testid="security-section"
-    className="min-h-screen flex items-start pt-24 md:pt-28 px-6"
-    style={{ background: '#EAE6F1' }}
+    className="pt-24 md:pt-28 pb-8 px-6 bg-white"
   >
     <motion.div
-      className="max-w-[1440px] mx-auto w-full rounded-[32px] md:rounded-[40px] overflow-hidden relative"
+      className="max-w-[1440px] mx-auto rounded-[32px] md:rounded-[40px] overflow-hidden relative"
       style={{ background: 'linear-gradient(160deg, #d8c4d8 0%, #cdb8cd 40%, #c4aec4 70%, #baA4ba 100%)' }}
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="px-8 sm:px-12 md:px-16 lg:px-20 py-20 md:py-28 lg:py-36 min-h-[500px] md:min-h-[600px] flex flex-col justify-center">
+      <div className="px-8 sm:px-12 md:px-16 lg:px-20 py-16 md:py-20 lg:py-24">
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white/90 tracking-tight leading-[0.95] mb-6 md:mb-8 max-w-lg"
         >
