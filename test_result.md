@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the mobile responsiveness of the OnePermit website at https://ivf-care-platform-1.preview.emergentagent.com - Check navbar hamburger menu, hero section text readability, AI-Powered Patient Monitoring section layout, Healthcare Veterans cards stacking, feature sections responsiveness, FAQ section mobile functionality, CTA section layout, and footer organization on mobile (375x667 iPhone size)"
+user_problem_statement: "Test the mobile responsiveness of the OnePermit website at https://celebrate-journey.preview.emergentagent.com - Check navbar hamburger menu, hero section text readability, AI-Powered Patient Monitoring section layout, Healthcare Veterans cards stacking, feature sections responsiveness, FAQ section mobile functionality, CTA section layout, and footer organization on mobile (375x667 iPhone size)"
 
 backend:
   - task: "Status API endpoint"
@@ -124,7 +124,7 @@ frontend:
   - task: "Mobile responsive navbar hamburger menu"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -136,7 +136,7 @@ frontend:
   - task: "Mobile responsive hero section text readability"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -148,7 +148,7 @@ frontend:
   - task: "Mobile responsive AI-Powered Patient Monitoring section"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -160,7 +160,7 @@ frontend:
   - task: "Mobile responsive Healthcare Veterans cards stacking"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -172,7 +172,7 @@ frontend:
   - task: "Mobile responsive feature sections"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -184,7 +184,7 @@ frontend:
   - task: "Mobile responsive FAQ section functionality"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -196,7 +196,7 @@ frontend:
   - task: "Mobile responsive CTA section layout"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
@@ -208,7 +208,7 @@ frontend:
   - task: "Mobile responsive footer organization"
     implemented: true
     working: "NA"
-    file: "Live website at https://ivf-care-platform-1.preview.emergentagent.com"
+    file: "Live website at https://celebrate-journey.preview.emergentagent.com"
     stuck_count: 0
     priority: "high"
     needs_retesting: false
