@@ -10,7 +10,7 @@ const footerLinks = {
 
 const FooterSection = () => (
   <footer data-testid="footer-section" className="bg-op-navy text-white py-16 md:py-20 px-6">
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-[1440px] mx-auto">
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-10 mb-14 md:mb-16">
         {/* Brand */}
         <div className="col-span-2 sm:col-span-3 md:col-span-1 mb-4 md:mb-0">

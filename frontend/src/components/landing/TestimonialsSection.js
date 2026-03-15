@@ -27,7 +27,7 @@ const testimonials = [
 
 const TestimonialsSection = () => (
   <section id="testimonials" data-testid="testimonials-section" className="py-24 md:py-32 px-6 bg-[#FFF5F5]">
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-[1440px] mx-auto">
       <div className="text-center mb-16">
         <motion.p
           className="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-op-slate/50 mb-4"

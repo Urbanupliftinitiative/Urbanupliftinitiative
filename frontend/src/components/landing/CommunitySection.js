@@ -12,7 +12,7 @@ const clinics = [
 
 const CommunitySection = () => (
   <section id="community" data-testid="community-section" className="py-24 md:py-32 px-6 bg-white">
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-[1440px] mx-auto">
       <div className="text-center mb-16">
         <motion.p
           className="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-op-slate/50 mb-4"

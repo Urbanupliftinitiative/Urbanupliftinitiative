@@ -137,7 +137,7 @@ const TabsSection = () => {
       className="py-24 md:py-32 px-6 transition-colors duration-700"
       style={{ background: `linear-gradient(180deg, #ffffff 0%, ${activeTab.color}25 100%)` }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1440px] mx-auto">
         {/* Tab Buttons */}
         <div data-testid="tab-buttons" className="flex items-center justify-center gap-2 mb-16">
           {tabs.map(tab => (

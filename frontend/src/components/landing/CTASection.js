@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const CTASection = () => (
   <section data-testid="cta-section" className="py-20 md:py-28 px-6">
     <motion.div
-      className="max-w-5xl mx-auto rounded-[36px] sm:rounded-[44px] p-10 sm:p-14 md:p-20 text-center relative overflow-hidden"
+      className="max-w-[1440px] mx-auto rounded-[36px] sm:rounded-[44px] p-10 sm:p-14 md:p-20 text-center relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, rgba(255,218,185,0.35) 0%, rgba(230,230,250,0.35) 50%, rgba(224,247,250,0.35) 100%)' }}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
