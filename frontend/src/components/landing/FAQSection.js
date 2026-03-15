@@ -1,92 +1,87 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
+
+const PILL_IMG = "https://static.prod-images.emergentagent.com/jobs/57eaa313-9958-4d1d-a711-9be1c718b916/images/a3340d711eaa3741cf6cbfb7e53f22715bc3b795cd231c12cecd181e106ad12e.png";
 
 const faqs = [
   {
-    q: 'How does OnePermit integrate with our existing EMR system?',
-    a: 'OnePermit offers seamless integration with major EMR platforms through our secure API. Our team handles the entire setup process, ensuring your existing workflows remain uninterrupted while adding powerful monitoring and communication capabilities.',
+    question: "How does OnePermit integrate with our existing EMR system?",
+    answer: "OnePermit integrates with major EMR systems including Epic, Cerner, and Athenahealth through secure API connections. We handle the technical setup and provide ongoing support."
   },
   {
-    q: 'Can we start with a pilot program before full deployment?',
-    a: 'Absolutely. We recommend starting with a small cohort of patients or surrogates to demonstrate value before scaling. Our team provides dedicated support throughout the pilot to ensure a smooth experience.',
+    question: "Can we start with a pilot program before full deployment?",
+    answer: "Absolutely. We support pilot programs and phased rollouts. Whether it's one clinic or your entire network, our success team is there at every step."
   },
   {
-    q: 'Is OnePermit HIPAA compliant?',
-    a: 'Yes. OnePermit is fully HIPAA compliant with enterprise-grade encryption, role-based access controls, comprehensive audit logging, and regular third-party security assessments. Patient data security is our top priority.',
+    question: "Is OnePermit HIPAA compliant?",
+    answer: "Yes. OnePermit is fully HIPAA compliant with enterprise-grade encryption, role-based access controls, comprehensive audit logging, and regular security audits."
   },
   {
-    q: 'How do surrogacy agencies monitor remote surrogates?',
-    a: 'OnePermit provides real-time vitals tracking, medication adherence monitoring, and milestone updates — all accessible through a centralized agency dashboard. Surrogates log their data through our mobile-friendly interface, and agencies receive instant alerts for any concerns.',
+    question: "How do surrogacy agencies monitor remote surrogates?",
+    answer: "Agencies receive real-time updates on medication adherence, vitals, symptoms, and appointments through customizable dashboards. AI-powered alerts flag potential issues before they become problems."
   },
   {
-    q: 'What makes OnePermit different from other fertility apps?',
-    a: 'OnePermit is the only platform that unifies all stakeholders — patients, surrogates, clinics, agencies, and families — into one joyful, accountable care ecosystem. We go beyond tracking to celebrate milestones and build genuine connections throughout the journey.',
-  },
+    question: "What makes OnePermit different from other fertility apps?",
+    answer: "OnePermit is the only platform built specifically for IVF and surrogacy workflows, with multi-role access, clinic integration, AI risk detection, and end-to-end journey tracking."
+  }
 ];
-
-const FAQItem = ({ faq, isOpen, onToggle }) => (
-  <div className="border-b border-slate-100">
-    <button
-      data-testid={`faq-toggle-${faq.q.slice(0, 20).replace(/\s/g, '-').toLowerCase()}`}
-      onClick={onToggle}
-      className="w-full flex items-center justify-between py-6 text-left group"
-    >
-      <span className="text-base md:text-lg font-semibold text-op-navy pr-8 group-hover:text-op-navy/80 transition-colors">
-        {faq.q}
-      </span>
-      <span className="shrink-0 w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
-        {isOpen ? <Minus size={16} className="text-op-navy" /> : <Plus size={16} className="text-op-navy" />}
-      </span>
-    </button>
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-          className="overflow-hidden"
-        >
-          <p className="pb-6 text-sm md:text-base text-op-slate leading-relaxed max-w-3xl">
-            {faq.a}
-          </p>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
-);
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section data-testid="faq-section" className="py-24 md:py-32 px-6 bg-white">
-      <div className="max-w-[1440px] mx-auto">
-        <motion.h2
-          className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-op-navy tracking-tight text-center mb-16 md:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+    <section data-testid="faq-section" className="py-24 bg-white">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+        <h2 className="text-4xl lg:text-5xl font-extralight text-gray-900 mb-16 text-center">
           Frequently Asked Questions
-        </motion.h2>
+        </h2>
 
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, i) => (
-            <FAQItem
-              key={i}
-              faq={faq}
-              isOpen={openIndex === i}
-              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
-            />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left — Pill illustration */}
+          <div className="lg:col-span-4 flex items-center justify-center">
+            <div className="w-48 h-48 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl flex items-center justify-center">
+              <img src={PILL_IMG} alt="" className="w-28 h-28 object-contain" />
+            </div>
+          </div>
+
+          {/* Right — Questions */}
+          <div className="lg:col-span-8 space-y-4">
+            {faqs.map((faq, idx) => (
+              <div
+                key={idx}
+                data-testid={`faq-item-${idx}`}
+                className="bg-gray-50 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                  className="w-full flex items-center justify-between p-6 text-left"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 pr-8">
+                    {faq.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    {openIndex === idx ? (
+                      <X className="w-6 h-6 text-gray-900" />
+                    ) : (
+                      <Plus className="w-6 h-6 text-gray-900" />
+                    )}
+                  </div>
+                </button>
+
+                {openIndex === idx && (
+                  <div className="px-6 pb-6">
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" data-testid="faq-see-all" className="text-op-navy font-bold text-base hover:underline underline-offset-4 transition-all">
-            See all FAQs &rarr;
+          <a href="#" data-testid="faq-see-all" className="inline-flex items-center space-x-2 text-gray-900 hover:text-purple-600 font-medium transition-colors">
+            <span>See all FAQs</span>
+            <span>&rarr;</span>
           </a>
         </div>
       </div>
