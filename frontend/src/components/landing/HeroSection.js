@@ -33,7 +33,7 @@ const HeroSection = () => {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold text-white tracking-[-0.035em] leading-[0.95]"
+              className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold text-op-navy tracking-[-0.035em] leading-[0.95]"
             >
               Your Partner in
               <br />
@@ -44,7 +44,7 @@ const HeroSection = () => {
 
             <motion.p
               variants={fadeUp}
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/75 leading-relaxed max-w-lg font-medium"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-op-navy/70 leading-relaxed max-w-lg font-medium"
             >
               Unify patients, surrogates, clinics, and agencies
               into one intelligent care platform.
