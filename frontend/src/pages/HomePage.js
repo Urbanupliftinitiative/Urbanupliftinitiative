@@ -1,4 +1,5 @@
 import React from 'react';
+import HalideTopo from '../components/ui/halide-topo-hero';
 import AccordionHero from '../components/landing/AccordionHero';
 import SecuritySection from '../components/landing/SecuritySection';
 import AboutSection from '../components/landing/AboutSection';
@@ -14,6 +15,7 @@ import FooterSection from '../components/landing/FooterSection';
 
 const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
+    <HalideTopo />
     <AccordionHero />
     <SecuritySection />
     <AboutSection />
