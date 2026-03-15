@@ -84,7 +84,7 @@ const HeroSection = () => {
     <section
       data-testid="hero-section"
       className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-12"
-      style={{ background: 'linear-gradient(160deg, #edd5ed 0%, #ddc5dd 35%, #d0b4d0 65%, #c4a4c8 100%)' }}
+      style={{ background: '#EAE6F1' }}
     >
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-6 items-center">
