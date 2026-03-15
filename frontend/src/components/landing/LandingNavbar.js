@@ -28,7 +28,7 @@ const LandingNavbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" data-testid="navbar-logo" className="font-bold text-2xl tracking-tight text-op-navy font-sora">
+          <Link to="/" data-testid="navbar-logo" className={`font-bold text-2xl tracking-tight font-sora transition-colors duration-300 ${scrolled ? 'text-op-navy' : 'text-white'}`}>
             OnePermit
           </Link>
 
@@ -37,7 +37,7 @@ const LandingNavbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-op-slate hover:text-op-navy transition-colors duration-300 font-medium text-[15px]"
+                className={`transition-colors duration-300 font-medium text-[15px] ${scrolled ? 'text-op-slate hover:text-op-navy' : 'text-white/80 hover:text-white'}`}
               >
                 {link.label}
               </a>
@@ -45,13 +45,13 @@ const LandingNavbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-5">
-            <a href="#login" data-testid="nav-login" className="text-op-slate hover:text-op-navy font-medium transition-colors">
+            <a href="#login" data-testid="nav-login" className={`font-medium transition-colors duration-300 ${scrolled ? 'text-op-slate hover:text-op-navy' : 'text-white/80 hover:text-white'}`}>
               Log in
             </a>
             <a
               href="#start"
               data-testid="nav-get-started"
-              className="bg-op-navy text-white rounded-full px-7 py-2.5 font-semibold text-[15px] hover:scale-105 active:scale-95 transition-transform duration-300"
+              className={`rounded-full px-7 py-2.5 font-semibold text-[15px] hover:scale-105 active:scale-95 transition-all duration-300 ${scrolled ? 'bg-op-navy text-white' : 'bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30'}`}
             >
               Get Started
             </a>
@@ -59,7 +59,7 @@ const LandingNavbar = () => {
 
           <button
             data-testid="mobile-menu-toggle"
-            className="lg:hidden p-2 text-op-navy"
+            className={`lg:hidden p-2 transition-colors ${scrolled ? 'text-op-navy' : 'text-white'}`}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}

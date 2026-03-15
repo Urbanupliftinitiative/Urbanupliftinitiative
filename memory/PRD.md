@@ -28,8 +28,8 @@ OnePermit is a unified IVF and surrogacy care accountability and monitoring plat
 
 ### Complete Homepage Redesign - DONE
 All 10 sections built and tested:
-1. **LandingNavbar** - Fixed, glass-morphism on scroll, mobile responsive menu
-2. **HeroSection** - Gradient background, massive "your journey deserves to be celebrated" headline, 4 floating 3D elements (heart, baby bottle, pill, star), 2 CTAs
+1. **LandingNavbar** - Fixed, glass-morphism on scroll, adaptive white/dark text, mobile responsive menu
+2. **HeroSection** - Previous layout restored: two-column with left-aligned "Your Partner in IVF & Surrogacy Care" in bold white Sora + right-side app mockup card with IVF Care gradient circle. Lavender/mauve gradient bg, floating 3D elements, "Request a demo" CTA
 3. **MarqueeSection** - Infinite scrolling partner names
 4. **AboutSection** - Massive uppercase text "TRACK CARE. SHARE MILESTONES.", floating lifestyle images
 5. **TabsSection** - 3 tabs (Track/Monitor/Support) with animated content switching and app UI mockups
