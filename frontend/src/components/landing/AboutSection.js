@@ -1,30 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stagger, fadeUp, viewportOnce } from '../shared/motion';
+import useReveal from '../shared/useReveal';
+import Eyebrow from '../shared/Eyebrow';
 import { missionStatement, visionStatement, programPurpose } from '../../data/organization';
 
-const AboutSection = () => (
-  <section id="about" className="bg-uui-cream py-24 md:py-32 px-6">
-    <div className="max-w-5xl mx-auto">
-      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce}>
-        <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest font-bold text-uui-gold mb-6">
-          Who We Are
-        </motion.p>
-        <motion.h2
-          variants={fadeUp}
-          className="font-sora text-3xl md:text-5xl lg:text-6xl font-bold text-uui-navy leading-tight tracking-tight mb-8"
-        >
-          {missionStatement}
-        </motion.h2>
-        <motion.p variants={fadeUp} className="text-lg md:text-xl text-uui-slate leading-relaxed max-w-3xl mb-4">
-          {visionStatement}
-        </motion.p>
-        <motion.p variants={fadeUp} className="text-base md:text-lg text-uui-slate/80 leading-relaxed max-w-3xl">
-          {programPurpose}
-        </motion.p>
-      </motion.div>
-    </div>
-  </section>
-);
+const AboutSection = () => {
+  return (
+    <section id="about" className="bg-white py-20 md:py-28 lg:py-36">
+      <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
+        <motion.div {...useReveal()}>
+          <Eyebrow>Who We Are</Eyebrow>
+          <h2 className="max-w-[1120px] text-[42px] sm:text-[56px] md:text-[68px] font-extrabold leading-[0.95] tracking-[-0.04em] text-ed-ink">
+            {missionStatement}
+          </h2>
+          <div className="mt-10 pt-10 border-t border-ed-border grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <p className="text-[20px] md:text-[24px] font-bold leading-[1.3] tracking-[-0.01em] text-ed-ink">
+              {visionStatement}
+            </p>
+            <p className="text-[15px] leading-relaxed text-ed-muted">
+              {programPurpose}
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default AboutSection;

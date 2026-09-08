@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { stagger, fadeUp, viewportOnce } from '../shared/motion';
+import useReveal from '../shared/useReveal';
+import Eyebrow from '../shared/Eyebrow';
 import { org } from '../../data/organization';
 
 const AMOUNTS = [25, 50, 100, 250];
 
-const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-uui-gold focus-visible:ring-offset-2';
+const FOCUS_RING = 'focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2';
+const INPUT = `w-full min-h-[48px] bg-ed-surfaceRaised border border-ed-border rounded-[12px] px-4 text-[16px] text-ed-ink placeholder:text-ed-muted ${FOCUS_RING} focus:border-ed-accent transition-colors`;
 
 const DonateSection = () => {
   const [frequency, setFrequency] = useState('once');
@@ -29,27 +30,25 @@ const DonateSection = () => {
   };
 
   return (
-    <section id="donate" className="bg-white py-24 md:py-32 px-6">
-      <div className="max-w-3xl mx-auto">
-        <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="text-center mb-12">
-          <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest font-bold text-uui-gold mb-4">
-            Give
-          </motion.p>
-          <motion.h2 variants={fadeUp} className="font-sora text-3xl md:text-5xl font-bold text-uui-navy tracking-tight mb-4">
+    <section id="donate" className="bg-white py-20 md:py-28 lg:py-36 px-4 md:px-6">
+      <div className="mx-auto max-w-xl">
+        <motion.div {...useReveal()} className="text-center mb-12">
+          <div className="flex justify-center"><Eyebrow>Give</Eyebrow></div>
+          <h2 className="text-[34px] sm:text-[44px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink mb-4">
             Every gift moves Camden forward.
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-lg text-uui-slate max-w-xl mx-auto">
+          </h2>
+          <p className="text-[16px] text-ed-ink/60 max-w-md mx-auto">
             Your donation supports our mentorship program, the Senior Safety Initiative, the Back-to-School
             Breakfast program, and our long-term goal of building the Cave of Engedi Youth Center by 2028.
-          </motion.p>
+          </p>
         </motion.div>
 
-        <div className="bg-uui-cream rounded-2xl border border-uui-navy/10 p-8 md:p-10">
+        <div className="bg-white rounded-[16px] border border-ed-border shadow-ed-raised p-8 md:p-10">
           {submitted ? (
             <div role="status" className="text-center py-10">
-              <CheckCircle2 size={48} className="text-uui-blue mx-auto mb-4" />
-              <h3 className="font-sora text-xl font-bold text-uui-navy mb-2">Thank you, {form.name || 'friend'}.</h3>
-              <p className="text-uui-slate">
+              <CheckCircle2 size={44} className="text-ed-accent mx-auto mb-4" />
+              <h3 className="text-[19px] font-extrabold text-ed-ink mb-2">Thank you, {form.name || 'friend'}.</h3>
+              <p className="text-[14px] text-ed-muted">
                 This is a demo donation form — no payment has been processed. Once {org.shortName} connects a real
                 payment provider, gifts like yours will go directly to work in Camden.
               </p>
@@ -63,8 +62,8 @@ const DonateSection = () => {
                     type="button"
                     aria-pressed={frequency === freq}
                     onClick={() => setFrequency(freq)}
-                    className={`flex-1 rounded-full py-2.5 text-sm font-semibold transition-colors ${FOCUS_RING} ${
-                      frequency === freq ? 'bg-uui-navy text-white' : 'bg-white text-uui-navy border border-uui-navy/20'
+                    className={`flex-1 min-h-[44px] rounded-full text-[14px] font-bold transition-colors ${FOCUS_RING} ${
+                      frequency === freq ? 'bg-ed-ink text-white' : 'bg-white text-ed-ink border border-ed-border'
                     }`}
                   >
                     {freq === 'once' ? 'One-time' : 'Monthly'}
@@ -79,10 +78,10 @@ const DonateSection = () => {
                     type="button"
                     aria-pressed={!customAmount && amount === value}
                     onClick={() => handleAmountClick(value)}
-                    className={`rounded-xl py-3 text-sm font-bold transition-colors ${FOCUS_RING} ${
+                    className={`min-h-[44px] rounded-[12px] text-[14px] font-extrabold transition-colors ${FOCUS_RING} ${
                       !customAmount && amount === value
-                        ? 'bg-uui-gold text-uui-charcoal'
-                        : 'bg-white text-uui-navy border border-uui-navy/20'
+                        ? 'bg-ed-accent text-white'
+                        : 'bg-white text-ed-ink border border-ed-border'
                     }`}
                   >
                     ${value}
@@ -99,41 +98,41 @@ const DonateSection = () => {
                 placeholder="Custom amount"
                 value={customAmount}
                 onChange={(e) => setCustomAmount(e.target.value)}
-                className={`w-full bg-white border border-uui-navy/20 rounded-xl px-4 py-3 text-sm mb-6 ${FOCUS_RING}`}
+                className={`${INPUT} mb-6`}
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div>
-                  <label htmlFor="donor-name" className="block text-xs font-semibold text-uui-slate mb-1.5">Full name</label>
+                  <label htmlFor="donor-name" className="block text-[13px] font-semibold text-ed-ink mb-1.5">Full name</label>
                   <input
                     id="donor-name"
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className={`w-full bg-white border border-uui-navy/20 rounded-xl px-4 py-3 text-sm ${FOCUS_RING}`}
+                    className={INPUT}
                   />
                 </div>
                 <div>
-                  <label htmlFor="donor-email" className="block text-xs font-semibold text-uui-slate mb-1.5">Email</label>
+                  <label htmlFor="donor-email" className="block text-[13px] font-semibold text-ed-ink mb-1.5">Email</label>
                   <input
                     id="donor-email"
                     type="email"
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className={`w-full bg-white border border-uui-navy/20 rounded-xl px-4 py-3 text-sm ${FOCUS_RING}`}
+                    className={INPUT}
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className={`w-full bg-uui-navy text-white rounded-full py-4 text-base font-bold hover:bg-uui-blue transition-colors ${FOCUS_RING}`}
+                className={`w-full min-h-[48px] bg-ed-accent text-white rounded-full text-[15px] font-bold shadow-ed-glow hover:-translate-y-px transition-transform ${FOCUS_RING}`}
               >
                 Donate ${selectedAmount || 0}{frequency === 'monthly' ? '/month' : ''}
               </button>
-              <p className="mt-3 text-xs text-uui-slate/60 text-center">
+              <p className="mt-3 text-[12px] text-ed-muted text-center">
                 Demo form — not yet connected to a live payment processor. No charge will occur.
               </p>
             </form>

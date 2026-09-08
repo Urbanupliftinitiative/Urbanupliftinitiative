@@ -7,7 +7,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        // Kept for the locked hero (halide-topo-hero.jsx uses font-sora
+        // directly) — do not remove or repurpose.
         sora: ['Sora', 'sans-serif'],
+        // Editorial Operations design system's primary typeface — the new
+        // default for everything outside the hero.
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       colors: {
         // Kept for the locked hero (halide-topo-hero.jsx references op-navy
@@ -22,18 +27,37 @@ module.exports = {
           navy: '#1A1A2E',
           slate: '#4A4A6A',
         },
-        // Urban Uplift Initiative brand palette — derived from the
-        // organization's own navy/blue emblem, with a warm gold accent for
-        // hope/dignity and a cream editorial background.
-        uui: {
-          navy: '#122A4E',
-          blue: '#2F5C8A',
-          sky: '#7FADD9',
-          gold: '#C99A3B',
-          cream: '#FAF6EE',
-          charcoal: '#1E2430',
-          slate: '#5B6472',
+        // Editorial Operations tokens (from MY-DESIGN-SYSTEM/design-tokens.json)
+        ed: {
+          accent: '#FF385C',
+          accentSoft: 'rgba(255, 56, 92, 0.08)',
+          accentGlow: 'rgba(255, 56, 92, 0.25)',
+          cool: '#6597FF',
+          ink: '#222222',
+          muted: '#717171',
+          border: '#EBEBEB',
+          surface: '#FFFFFF',
+          surfaceRaised: '#F7F7F7',
+          warm: '#F2F1EE',
+          dark: '#0B0B0B',
+          darkRaised: '#171717',
+          success: '#34C759',
+          danger: '#FF3B30',
+          warning: '#FF9500',
         },
+      },
+      maxWidth: {
+        'ed-container': '1280px',
+      },
+      boxShadow: {
+        'ed-card': '0 2px 8px rgba(0,0,0,0.04)',
+        'ed-raised': '0 2px 12px rgba(0,0,0,0.08)',
+        'ed-floating': '0 8px 30px rgba(0,0,0,0.12)',
+        'ed-glow': '0 8px 24px rgba(255,56,92,0.25)',
+      },
+      transitionTimingFunction: {
+        'ed-standard': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'ed-editorial': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },

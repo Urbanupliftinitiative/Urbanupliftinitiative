@@ -1,30 +1,38 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Mail, MapPin } from 'lucide-react';
+import useReveal from '../components/shared/useReveal';
+import Eyebrow from '../components/shared/Eyebrow';
 import SiteFooter from '../components/shared/SiteFooter';
 import ContactForm from '../components/contact/ContactForm';
 import { org } from '../data/organization';
 
 const ContactPage = () => (
-  <div className="min-h-screen bg-white font-sora">
-    <section className="bg-uui-navy text-white pt-[140px] pb-16 md:pt-[168px] md:pb-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <p className="text-sm uppercase tracking-widest font-bold text-uui-gold mb-4">Get in Touch</p>
-        <h1 className="font-sora text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-6">
-          Let's talk.
-        </h1>
-        <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-          Whether you want to mentor, partner, sponsor, or just learn more about our work in Camden — we'd love
-          to hear from you.
-        </p>
+  <div className="min-h-screen bg-white">
+    <section className="bg-ed-dark text-white pt-[140px] pb-16 md:pt-[168px] md:pb-20 px-4 md:px-6">
+      <div className="mx-auto w-full max-w-ed-container">
+        <motion.div {...useReveal()}>
+          <Eyebrow dark>Get in Touch</Eyebrow>
+          <h1 className="text-[42px] md:text-[64px] font-extrabold leading-[0.95] tracking-[-0.04em] mb-6">
+            Let's talk.
+          </h1>
+          <p className="text-[16px] md:text-[18px] text-white/55 max-w-2xl leading-relaxed">
+            Whether you want to mentor, partner, sponsor, or just learn more about our work in Camden — we'd love
+            to hear from you.
+          </p>
+        </motion.div>
       </div>
     </section>
 
-    <section className="py-16 md:py-24 px-6">
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-10">
+    <section className="py-16 md:py-24 px-4 md:px-6">
+      <div className="mx-auto w-full max-w-ed-container grid grid-cols-1 md:grid-cols-[1fr_1.3fr] gap-10">
         <div>
-          <h2 className="font-sora text-xl font-bold text-uui-navy mb-4">Reach us directly</h2>
-          <div className="space-y-3 text-sm text-uui-slate">
-            <a href={`mailto:${org.email}`} className="flex items-center gap-2 font-semibold text-uui-navy hover:text-uui-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-uui-gold rounded-md w-fit">
+          <h2 className="text-[18px] font-extrabold text-ed-ink mb-4">Reach us directly</h2>
+          <div className="space-y-3 text-[14px] text-ed-muted">
+            <a
+              href={`mailto:${org.email}`}
+              className="flex items-center gap-2 font-semibold text-ed-ink hover:text-ed-accent focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md w-fit"
+            >
               <Mail size={16} /> {org.email}
             </a>
             <p className="flex items-center gap-2">

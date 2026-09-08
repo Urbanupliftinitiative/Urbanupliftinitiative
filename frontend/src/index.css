@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Legacy tokens — kept because the locked hero (halide-topo-hero.jsx) and
-   base body color still reference these; do not repurpose. */
+   its own inline "OnePermit" wordmark reference these; do not repurpose. */
 :root {
   --op-bg-warm: #FFF5F5;
   --op-bg-lavender: #F3E5F5;
@@ -18,12 +19,16 @@
   --op-brand-blue: #E0F7FA;
 }
 
+/* Editorial Operations design system — see MY-DESIGN-SYSTEM/design-tokens.json.
+   Body now defaults to Inter/near-black; the hero overrides font-family
+   locally via its own font-sora wrapper, so this does not affect it. */
 body {
   margin: 0;
-  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--op-text-primary);
+  color: #222222;
   background: #ffffff;
 }
 
@@ -31,66 +36,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(3deg); }
-}
-
-@keyframes float-reverse {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-3deg); }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.05); }
-}
-
-@keyframes slide-up-fade {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: float-reverse 5s ease-in-out infinite;
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 4s ease-in-out infinite;
-}
-
-/* Glass morphism utility */
-.glass {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
+/* Glass morphism utility — kept only for the site navigation overlay per
+   the design system's own guidance (nav may blur over a hero image; avoid
+   glassmorphism elsewhere). */
 .glass-strong {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Selection style */
 ::selection {
-  background: #C99A3B;
+  background: #FF385C;
   color: #ffffff;
 }
 
@@ -102,7 +60,7 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C99A3B;
+  background: #FF385C;
   border-radius: 3px;
 }
 
@@ -113,4 +71,17 @@ html {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Respect the user's OS-level reduced-motion preference. This also quiets
+   the hero's own Ken Burns background pan (a raw CSS animation defined in
+   halide-topo-hero.jsx) for those users specifically — an accessibility
+   fix that does not change the hero's default appearance for anyone else. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

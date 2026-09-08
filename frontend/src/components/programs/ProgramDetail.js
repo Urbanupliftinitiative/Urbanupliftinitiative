@@ -1,23 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stagger, fadeUp, viewportOnce } from '../shared/motion';
+import useReveal from '../shared/useReveal';
 
 const ProgramDetail = ({ program, reverse, children }) => (
-  <section id={program.id} className={`py-20 md:py-24 px-6 ${reverse ? 'bg-uui-cream' : 'bg-white'} scroll-mt-24`}>
-    <div className="max-w-5xl mx-auto">
-      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce}>
-        <motion.span variants={fadeUp} className="inline-block text-xs font-bold uppercase tracking-wide text-uui-gold mb-3">
+  <section id={program.id} className={`py-16 md:py-24 px-4 md:px-6 ${reverse ? 'bg-ed-warm' : 'bg-white'} scroll-mt-24`}>
+    <div className="mx-auto w-full max-w-ed-container">
+      <motion.div {...useReveal()}>
+        <span className="inline-block text-[10px] font-extrabold uppercase tracking-[0.16em] text-ed-accent mb-3">
           {program.status}
-        </motion.span>
-        <motion.h2 variants={fadeUp} className="font-sora text-2xl md:text-4xl font-bold text-uui-navy tracking-tight mb-3">
+        </span>
+        <h2 className="text-[26px] md:text-[38px] font-extrabold tracking-[-0.02em] text-ed-ink mb-3">
           {program.name}
-        </motion.h2>
-        <motion.p variants={fadeUp} className="text-sm md:text-base font-semibold text-uui-slate/70 mb-4">
-          {program.audience}
-        </motion.p>
-        <motion.p variants={fadeUp} className="text-base md:text-lg text-uui-slate leading-relaxed max-w-3xl">
-          {program.summary}
-        </motion.p>
+        </h2>
+        <p className="text-[14px] font-semibold text-ed-ink/50 mb-4">{program.audience}</p>
+        <p className="text-[15px] md:text-[16px] text-ed-ink/70 leading-relaxed max-w-2xl">{program.summary}</p>
       </motion.div>
       {children && <div className="mt-10">{children}</div>}
     </div>

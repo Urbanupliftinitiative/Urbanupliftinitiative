@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Car, Building2, HeartHandshake } from 'lucide-react';
 import { stagger, fadeUp, viewportOnce } from '../shared/motion';
+import Eyebrow from '../shared/Eyebrow';
 import { fundingPriorities } from '../../data/organization';
 
 const ICONS = {
@@ -11,16 +12,16 @@ const ICONS = {
 };
 
 const FundingPrioritiesSection = () => (
-  <section className="bg-uui-cream py-24 md:py-32 px-6">
-    <div className="max-w-6xl mx-auto">
+  <section className="bg-ed-warm py-20 md:py-28 lg:py-36">
+    <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
       <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="mb-14 max-w-2xl">
-        <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest font-bold text-uui-gold mb-4">
-          Where Support Goes
-        </motion.p>
-        <motion.h2 variants={fadeUp} className="font-sora text-3xl md:text-5xl font-bold text-uui-navy tracking-tight">
+        <motion.div variants={fadeUp}>
+          <Eyebrow>Where Support Goes</Eyebrow>
+        </motion.div>
+        <motion.h2 variants={fadeUp} className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink">
           What we're building toward.
         </motion.h2>
-        <motion.p variants={fadeUp} className="mt-4 text-uui-slate text-lg">
+        <motion.p variants={fadeUp} className="mt-4 text-[15px] text-ed-ink/60 max-w-xl">
           We don't yet publish a formal financial breakdown — we're a small, early-stage team. Here are the specific
           priorities every gift moves us toward.
         </motion.p>
@@ -31,18 +32,20 @@ const FundingPrioritiesSection = () => (
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6"
       >
         {fundingPriorities.map((priority) => {
           const Icon = ICONS[priority.id];
           return (
-            <motion.div key={priority.id} variants={fadeUp} className="bg-white rounded-2xl p-8 border border-uui-navy/10">
-              <Icon size={28} className="text-uui-blue mb-4" strokeWidth={1.5} />
-              <h3 className="font-sora text-lg font-bold text-uui-navy mb-2">
+            <motion.div key={priority.id} variants={fadeUp} className="bg-white rounded-[14px] border border-ed-border shadow-ed-card p-6">
+              <div className="w-11 h-11 rounded-[10px] bg-ed-accentSoft flex items-center justify-center mb-5">
+                <Icon size={20} className="text-ed-accent" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-[16px] font-extrabold tracking-[-0.01em] text-ed-ink mb-2">
                 {priority.name}
-                {priority.targetYear ? <span className="text-uui-gold"> · {priority.targetYear}</span> : null}
+                {priority.targetYear ? <span className="text-ed-accent"> · {priority.targetYear}</span> : null}
               </h3>
-              <p className="text-sm text-uui-slate leading-relaxed">{priority.description}</p>
+              <p className="text-[14px] text-ed-ink/60 leading-relaxed">{priority.description}</p>
             </motion.div>
           );
         })}

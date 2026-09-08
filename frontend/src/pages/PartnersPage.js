@@ -6,7 +6,7 @@ import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSec
 import SponsorshipSection from '../components/partners/SponsorshipSection';
 
 const PartnersPage = () => (
-  <div className="min-h-screen bg-white font-sora">
+  <div className="min-h-screen bg-white">
     <PartnersHero />
     <PartnersList />
     <FundingPrioritiesSection />

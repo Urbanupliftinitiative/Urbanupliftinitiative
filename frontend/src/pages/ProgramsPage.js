@@ -7,7 +7,7 @@ import FinalCTASection from '../components/landing/FinalCTASection';
 import { programs } from '../data/organization';
 
 const ProgramsPage = () => (
-  <div className="min-h-screen bg-white font-sora">
+  <div className="min-h-screen bg-white">
     <ProgramsHero />
     {programs.map((program, i) => (
       <ProgramDetail key={program.id} program={program} reverse={i % 2 === 1}>

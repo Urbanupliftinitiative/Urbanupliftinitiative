@@ -16,23 +16,27 @@ const facts = [
  * matters more than a bigger-looking number.
  */
 const ImpactSnapshotSection = () => (
-  <section className="bg-white py-20 md:py-28 px-6 border-y border-uui-navy/5">
-    <div className="max-w-6xl mx-auto">
+  <section className="bg-white border-t border-b border-ed-border py-16 md:py-20">
+    <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
       <motion.div
         variants={stagger}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6"
+        className="grid grid-cols-2 md:grid-cols-4"
       >
-        {facts.map((fact) => (
-          <motion.div key={fact.label} variants={fadeUp} className="text-center md:text-left">
-            <p className="font-sora text-4xl md:text-5xl font-extrabold text-uui-navy tracking-tight">{fact.value}</p>
-            <p className="mt-2 text-sm md:text-base text-uui-slate leading-snug">{fact.label}</p>
+        {facts.map((fact, i) => (
+          <motion.div
+            key={fact.label}
+            variants={fadeUp}
+            className={`px-0 md:px-8 py-6 md:py-0 ${i > 0 ? 'md:border-l border-ed-border' : ''}`}
+          >
+            <p className="font-extrabold text-[40px] md:text-[52px] leading-none tracking-[-0.03em] text-ed-ink">{fact.value}</p>
+            <p className="mt-2 text-[13px] text-ed-muted leading-snug">{fact.label}</p>
           </motion.div>
         ))}
       </motion.div>
-      <p className="mt-10 text-xs text-uui-slate/60 text-center md:text-left">
+      <p className="mt-8 text-[11px] text-ed-muted/70">
         We're an early-stage, six-member organization based in Camden, NJ — these are the facts as they stand today, not projections.
       </p>
     </div>

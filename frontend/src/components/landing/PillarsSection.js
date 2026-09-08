@@ -1,45 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stagger, fadeUp, viewportOnce } from '../shared/motion';
+import useReveal from '../shared/useReveal';
+import Eyebrow from '../shared/Eyebrow';
 import { pillars, mentorshipDelivery } from '../../data/organization';
 
+// Matches COMPONENT_CATALOG.md §4 Editorial row list: hairline top/bottom
+// rules, number / title / explanation columns on desktop, stacked on mobile.
 const PillarsSection = () => (
-  <section id="pillars" className="bg-uui-cream py-24 md:py-32 px-6">
-    <div className="max-w-5xl mx-auto">
-      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="mb-16 max-w-2xl">
-        <motion.p variants={fadeUp} className="text-sm uppercase tracking-widest font-bold text-uui-gold mb-4">
-          The Five Pillars
-        </motion.p>
-        <motion.h2 variants={fadeUp} className="font-sora text-3xl md:text-5xl font-bold text-uui-navy tracking-tight">
+  <section id="pillars" className="bg-ed-warm py-20 md:py-28 lg:py-36">
+    <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
+      <motion.div {...useReveal()} className="mb-14 max-w-2xl">
+        <Eyebrow>The Five Pillars</Eyebrow>
+        <h2 className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink">
           The framework behind the Mentorship Program.
-        </motion.h2>
+        </h2>
       </motion.div>
 
-      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="divide-y divide-uui-navy/10">
+      <motion.ol {...useReveal(0.1)} className="border-t border-black/10">
         {pillars.map((pillar) => (
-          <motion.div
-            key={pillar.number}
-            variants={fadeUp}
-            className="py-8 md:py-10 flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8"
-          >
-            <span className="font-sora text-4xl md:text-6xl font-extrabold text-uui-navy/15 md:w-32 shrink-0">
-              {pillar.number}
-            </span>
-            <div>
-              <h3 className="font-sora text-xl md:text-2xl font-bold text-uui-navy">{pillar.name}</h3>
-              <p className="text-uui-slate mt-1">{pillar.focus}</p>
-            </div>
-          </motion.div>
+          <li key={pillar.number} className="grid gap-2 sm:grid-cols-[64px_1fr_1.4fr] sm:gap-6 border-b border-black/10 py-7">
+            <span className="text-[13px] font-extrabold text-ed-accent">{pillar.number}</span>
+            <h3 className="text-[19px] font-extrabold tracking-[-0.01em] text-ed-ink">{pillar.name}</h3>
+            <p className="text-[14px] leading-relaxed text-ed-ink/60">{pillar.focus}</p>
+          </li>
         ))}
-      </motion.div>
+      </motion.ol>
 
-      <motion.p
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={viewportOnce}
-        className="mt-10 text-base md:text-lg text-uui-slate leading-relaxed max-w-3xl"
-      >
+      <motion.p {...useReveal(0.15)} className="mt-10 max-w-2xl text-[15px] md:text-[16px] text-ed-ink/60 leading-relaxed">
         {mentorshipDelivery}
       </motion.p>
     </div>
