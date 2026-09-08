@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html"
@@ -11,6 +10,8 @@ module.exports = {
         sora: ['Sora', 'sans-serif'],
       },
       colors: {
+        // Kept for the locked hero (halide-topo-hero.jsx references op-navy
+        // directly) — do not remove or repurpose these.
         op: {
           warm: '#FFF5F5',
           lavender: '#E6E6FA',
@@ -21,60 +22,20 @@ module.exports = {
           navy: '#1A1A2E',
           slate: '#4A4A6A',
         },
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+        // Urban Uplift Initiative brand palette — derived from the
+        // organization's own navy/blue emblem, with a warm gold accent for
+        // hope/dignity and a cream editorial background.
+        uui: {
+          navy: '#122A4E',
+          blue: '#2F5C8A',
+          sky: '#7FADD9',
+          gold: '#C99A3B',
+          cream: '#FAF6EE',
+          charcoal: '#1E2430',
+          slate: '#5B6472',
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
-        },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        }
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
-      }
-    }
+    },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 };

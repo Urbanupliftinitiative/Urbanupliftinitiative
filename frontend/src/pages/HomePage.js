@@ -1,33 +1,39 @@
 import React from 'react';
 import HalideTopo from '../components/ui/halide-topo-hero';
-import AccordionHero from '../components/landing/AccordionHero';
-import SecuritySection from '../components/landing/SecuritySection';
 import AboutSection from '../components/landing/AboutSection';
-import TabsSection from '../components/landing/TabsSection';
-import HeroSection from '../components/landing/HeroSection';
-import CommunitySection from '../components/landing/CommunitySection';
-import TestimonialsSection from '../components/landing/TestimonialsSection';
-import BenefitsSection from '../components/landing/BenefitsSection';
-import AdvisorsSection from '../components/landing/AdvisorsSection';
-import FAQSection from '../components/landing/FAQSection';
-import CTASection from '../components/landing/CTASection';
-import FooterSection from '../components/landing/FooterSection';
+import ImpactSnapshotSection from '../components/landing/ImpactSnapshotSection';
+import NeedSection from '../components/landing/NeedSection';
+import ProgramsSection from '../components/landing/ProgramsSection';
+import PillarsSection from '../components/landing/PillarsSection';
+import StoriesSection from '../components/landing/StoriesSection';
+import MethodologySection from '../components/landing/MethodologySection';
+import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
+import DonateSection from '../components/landing/DonateSection';
+import GetInvolvedSection from '../components/landing/GetInvolvedSection';
+import PartnersPreviewSection from '../components/landing/PartnersPreviewSection';
+import LeadershipSection from '../components/landing/LeadershipSection';
+import FinalCTASection from '../components/landing/FinalCTASection';
+import SiteFooter from '../components/shared/SiteFooter';
 
+// NOTE: HalideTopo is the locked hero — do not modify its file or its
+// position as the first element rendered here.
 const HomePage = () => (
   <div className="min-h-screen bg-white font-sora" data-testid="homepage">
     <HalideTopo />
-    <AccordionHero />
-    <SecuritySection />
     <AboutSection />
-    <TabsSection />
-    <HeroSection />
-    <CommunitySection />
-    <TestimonialsSection />
-    <BenefitsSection />
-    <AdvisorsSection />
-    <FAQSection />
-    <CTASection />
-    <FooterSection />
+    <ImpactSnapshotSection />
+    <NeedSection />
+    <ProgramsSection />
+    <PillarsSection />
+    <StoriesSection />
+    <MethodologySection />
+    <FundingPrioritiesSection />
+    <DonateSection />
+    <GetInvolvedSection />
+    <PartnersPreviewSection />
+    <LeadershipSection />
+    <FinalCTASection />
+    <SiteFooter />
   </div>
 );
 

@@ -1,22 +1,18 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
+import SiteFooter from '../components/shared/SiteFooter';
 import PartnersHero from '../components/partners/PartnersHero';
-import PartnerBenefits from '../components/partners/PartnerBenefits';
-import PartnerFeatures from '../components/partners/PartnerFeatures';
-import CTASection from '../components/CTASection';
-import Footer from '../components/Footer';
+import PartnersList from '../components/partners/PartnersList';
+import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
+import SponsorshipSection from '../components/partners/SponsorshipSection';
 
-const PartnersPage = () => {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <PartnersHero />
-      <PartnerBenefits />
-      <PartnerFeatures />
-      <CTASection />
-      <Footer />
-    </div>
-  );
-};
+const PartnersPage = () => (
+  <div className="min-h-screen bg-white font-sora">
+    <PartnersHero />
+    <PartnersList />
+    <FundingPrioritiesSection />
+    <SponsorshipSection />
+    <SiteFooter />
+  </div>
+);
 
 export default PartnersPage;
