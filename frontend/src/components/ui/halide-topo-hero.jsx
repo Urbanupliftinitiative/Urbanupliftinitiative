@@ -15,13 +15,13 @@ const HalideTopo = () => {
             transform: scale(1) translate(0, 0);
           }
           25% {
-            transform: scale(1.08) translate(-1%, -1%);
+            transform: scale(1.035) translate(-0.5%, -0.5%);
           }
           50% {
-            transform: scale(1.12) translate(-2%, 0.5%);
+            transform: scale(1.06) translate(-1%, 0.25%);
           }
           75% {
-            transform: scale(1.06) translate(0.5%, -0.5%);
+            transform: scale(1.03) translate(0.25%, -0.25%);
           }
           100% {
             transform: scale(1) translate(0, 0);
@@ -29,6 +29,7 @@ const HalideTopo = () => {
         }
         .hero-image-motion {
           animation: kenburns 20s ease-in-out infinite;
+          transform-origin: 50% 40%;
           will-change: transform;
         }
       `}</style>
@@ -39,7 +40,7 @@ const HalideTopo = () => {
           <img
             src={TEAM_IMG}
             alt="Urban Uplift Initiative team members standing together outdoors in Camden with the organization's banner"
-            className="hero-image-motion absolute inset-0 w-full h-full object-cover"
+            className="hero-image-motion absolute inset-0 w-full h-full object-cover object-[50%_40%]"
           />
           {/* Dark gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />

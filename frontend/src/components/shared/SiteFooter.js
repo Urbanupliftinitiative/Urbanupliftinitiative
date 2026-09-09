@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { footerColumns } from '../../data/navigation';
-import { org } from '../../data/organization';
+import { org, socialLinks } from '../../data/organization';
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md';
+
+// Icon for each supported platform in `socialLinks`. Add a key here if a
+// new platform is ever added to that data.
+const SOCIAL_ICONS = { facebook: Facebook, instagram: Instagram, linkedin: Linkedin, youtube: Youtube };
 
 // Matches COMPONENT_CATALOG.md §16: near-black background, compact grouped
 // navigation and contact, concise lower nav. The "one large conversion
@@ -39,7 +43,32 @@ const SiteFooter = () => {
               <p className="flex items-center gap-2">
                 <MapPin size={15} /> {org.city}, {org.state}
               </p>
+              {org.phone && (
+                <a href={`tel:${org.phone}`} className={`flex items-center gap-2 hover:text-white transition-colors ${FOCUS_RING}`}>
+                  <Phone size={15} /> {org.phone}
+                </a>
+              )}
             </div>
+            {socialLinks.length > 0 && (
+              <div className="flex items-center gap-3 mt-5">
+                {socialLinks.map(({ platform, url }) => {
+                  const Icon = SOCIAL_ICONS[platform];
+                  if (!Icon) return null;
+                  return (
+                    <a
+                      key={platform}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={platform}
+                      className={`w-8 h-8 rounded-full bg-white/[0.06] border border-white/15 flex items-center justify-center hover:bg-white/[0.12] transition-colors ${FOCUS_RING}`}
+                    >
+                      <Icon size={14} />
+                    </a>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {footerColumns.map((col) => (
@@ -87,7 +116,10 @@ const SiteFooter = () => {
         </div>
 
         <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
-          <p>&copy; {new Date().getFullYear()} {org.legalName}. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} {org.legalName}. All rights reserved.
+            {org.ein && <span> &middot; EIN {org.ein}</span>}
+          </p>
           <p>Made with care in {org.city}, {org.state}.</p>
         </div>
       </div>

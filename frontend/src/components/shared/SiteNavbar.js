@@ -1,11 +1,69 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { primaryNav } from '../../data/navigation';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { primaryNav, moreNav } from '../../data/navigation';
 import { org } from '../../data/organization';
 import PrimaryButton from './PrimaryButton';
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2';
+
+// Desktop-only dropdown for the secondary pages in `moreNav`. Closes on
+// outside click, Escape, and route change so it never lingers open.
+const MoreMenu = ({ transparent }) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className={`flex items-center gap-1 text-[14px] font-semibold ${FOCUS_RING} rounded-md transition-colors ${
+          transparent ? 'text-white/90 hover:text-white' : 'text-ed-muted hover:text-ed-ink'
+        }`}
+      >
+        More
+        <ChevronDown size={15} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+
+      {open && (
+        <div className="absolute top-full right-0 mt-3 w-56 rounded-[14px] border border-ed-border bg-white shadow-sm py-2 z-50">
+          {moreNav.map((item) => (
+            <Link
+              key={item.label}
+              to={item.to}
+              onClick={() => setOpen(false)}
+              className={`block px-4 py-2.5 text-[14px] font-semibold text-ed-ink/80 hover:bg-ed-warm hover:text-ed-ink transition-colors ${FOCUS_RING}`}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 /**
  * Shared site navigation — 80px header per the design system's nav spec.
@@ -62,6 +120,7 @@ const SiteNavbar = () => {
               {item.label}
             </Link>
           ))}
+          <MoreMenu transparent={transparent} />
           <PrimaryButton to="/#donate" variant="primary" className="!px-5 !min-h-[40px] !text-[13px]">
             Donate
           </PrimaryButton>
@@ -82,6 +141,17 @@ const SiteNavbar = () => {
       {mobileOpen && (
         <div id="mobile-nav" className="lg:hidden glass-strong px-4 py-6 flex flex-col gap-1">
           {primaryNav.map((item) => (
+            <Link
+              key={item.label}
+              to={item.to}
+              onClick={() => setMobileOpen(false)}
+              className={`text-[15px] font-semibold text-ed-ink ${FOCUS_RING} rounded-md py-3 border-b border-ed-border last:border-0`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <p className="pt-4 pb-1 text-[11px] font-extrabold uppercase tracking-[0.16em] text-ed-muted">More</p>
+          {moreNav.map((item) => (
             <Link
               key={item.label}
               to={item.to}

@@ -16,7 +16,17 @@ export const org = {
   email: 'UrbanUpliftInitiative@gmail.com',
   orgType: 'Faith-based community nonprofit',
   teamSize: 6,
+  // Trust-signal fields the org hasn't published yet. Left undefined
+  // rather than invented — SiteFooter only renders each once it's set.
+  phone: undefined,
+  ein: undefined,
 };
+
+// Social profiles, once the org has them to share. Shape:
+// { platform: 'facebook' | 'instagram' | 'linkedin' | 'youtube', url: '...' }
+// Empty for now — nothing invented — SiteFooter hides the row until this
+// has entries.
+export const socialLinks = [];
 
 // The organization operates two program arms: a youth mentorship program
 // and a citywide community-development effort. Both are described in its

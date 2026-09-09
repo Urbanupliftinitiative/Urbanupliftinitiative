@@ -8,6 +8,17 @@ export const primaryNav = [
   { label: 'Contact', to: '/contact' },
 ];
 
+// Secondary pages grouped under the header's "More" menu (and mirrored in
+// the footer's "Learn More" column below) — kept separate from primaryNav
+// so the header's main row doesn't get crowded.
+export const moreNav = [
+  { label: 'Meet the Team', to: '/team' },
+  { label: 'Events', to: '/events' },
+  { label: 'News & Media', to: '/news' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Scholarships', to: '/scholarships' },
+];
+
 export const footerColumns = [
   {
     heading: 'Organization',
@@ -33,5 +44,9 @@ export const footerColumns = [
       { label: 'Senior Safety Initiative', to: '/programs#senior-safety-initiative' },
       { label: 'Back-to-School Breakfast', to: '/programs#back-to-school-breakfast' },
     ],
+  },
+  {
+    heading: 'Learn More',
+    links: moreNav,
   },
 ];

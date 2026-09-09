@@ -1,21 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Users, ShieldCheck, Coffee, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { stagger, fadeUp, viewportOnce } from '../shared/motion';
 import Eyebrow from '../shared/Eyebrow';
 import { programs } from '../../data/organization';
 
-const ICONS = {
-  'youth-mentorship': Users,
-  'senior-safety-initiative': ShieldCheck,
-  'back-to-school-breakfast': Coffee,
+import COMMUNITY_CLEANUP from '../../assets/gallery/community-cleanup.jpg';
+import FIRETRUCK_VOLUNTEER from '../../assets/gallery/firetruck-volunteer.jpg';
+import COMMUNITY_OUTREACH from '../../assets/gallery/community-outreach.jpg';
+
+const IMAGES = {
+  'youth-mentorship': { src: COMMUNITY_CLEANUP, alt: 'Mentors and a youth volunteer working together in the community' },
+  'senior-safety-initiative': { src: FIRETRUCK_VOLUNTEER, alt: 'A team member volunteering in the Camden community' },
+  'back-to-school-breakfast': { src: COMMUNITY_OUTREACH, alt: 'A team member connecting with youth in the community' },
 };
 
 // Matches COMPONENT_CATALOG.md §5 Media story card: rounded media block with
-// a number badge, then a border-top title/explanation split. No real
-// program photography exists yet, so the "media" is an illustrative color
-// block rather than a stock photo standing in for real people.
+// a number badge, then a border-top title/explanation split.
 const ProgramsSection = () => (
   <section id="programs" className="bg-white py-20 md:py-28 lg:py-36">
     <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
@@ -36,12 +38,18 @@ const ProgramsSection = () => (
         className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
       >
         {programs.map((program, i) => {
-          const Icon = ICONS[program.id];
+          const image = IMAGES[program.id];
           return (
             <motion.div key={program.id} variants={fadeUp}>
-              <div className="relative rounded-[18px] bg-ed-warm aspect-[4/3] flex items-center justify-center overflow-hidden group">
-                <Icon size={40} className="text-ed-ink/70 transition-transform duration-700 group-hover:scale-[1.03]" strokeWidth={1.25} />
-                <span className="absolute top-4 left-4 text-[11px] font-extrabold text-ed-accent">{String(i + 1).padStart(2, '0')}</span>
+              <div className="relative rounded-[18px] bg-ed-warm aspect-[4/3] overflow-hidden group">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+                <span className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/90 text-ed-ink text-[11px] font-extrabold flex items-center justify-center">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
               </div>
               <div className="mt-5 pt-5 border-t border-ed-border">
                 <span className="inline-block text-[10px] font-extrabold uppercase tracking-[0.16em] text-ed-accent mb-2">
