@@ -2,8 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { org } from '../../data/organization';
-
-const PREGNANT_IMG = "https://images.unsplash.com/photo-1725393197924-e1dff51c29f1?auto=format&fit=crop&q=80&w=1800";
+import TEAM_IMG from '../../assets/team-photo.jpg';
 
 const HalideTopo = () => {
   const navigate = useNavigate();
@@ -38,8 +37,8 @@ const HalideTopo = () => {
         {/* Animated Background Image */}
         <div className="absolute inset-0">
           <img
-            src={PREGNANT_IMG}
-            alt="Pregnant woman"
+            src={TEAM_IMG}
+            alt="Urban Uplift Initiative team members standing together outdoors in Camden with the organization's banner"
             className="hero-image-motion absolute inset-0 w-full h-full object-cover"
           />
           {/* Dark gradient overlay for text readability */}
