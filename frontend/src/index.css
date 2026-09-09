@@ -48,7 +48,7 @@ html {
 
 /* Selection style */
 ::selection {
-  background: #FF385C;
+  background: #0284C7;
   color: #ffffff;
 }
 
@@ -60,7 +60,7 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FF385C;
+  background: #0284C7;
   border-radius: 3px;
 }
 
