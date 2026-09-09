@@ -59,10 +59,10 @@ const HalideTopo = () => {
           <div className="max-w-3xl">
             <h1 className="text-white leading-[1.02] tracking-tight mb-6">
               <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                Plant. Grow.
+                At-risk youth,
               </span>
               <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                Build.
+                never facing it alone.
               </span>
             </h1>
 
