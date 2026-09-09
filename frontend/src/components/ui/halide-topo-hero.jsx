@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Check } from 'lucide-react';
+import { ArrowDownRight } from 'lucide-react';
 import { org } from '../../data/organization';
 import TEAM_IMG from '../../assets/team-photo.jpg';
 
@@ -56,29 +56,39 @@ const HalideTopo = () => {
           </div>
 
           {/* Bottom — Copy */}
-          <div className="max-w-2xl">
-            <h1 className="text-white leading-[1.05] mb-5">
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                Youth &amp; Community Uplift
+          <div className="max-w-3xl">
+            {/* Kicker */}
+            <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80 mb-5">
+              {org.city}, {org.state}
+            </span>
+
+            <h1 className="text-white leading-[1.02] tracking-tight mb-6">
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
+                {org.city},
+              </span>
+              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
+                uplifted together.
               </span>
             </h1>
 
-            {/* Checkmark line */}
-            <div className="flex items-center gap-2 mb-8">
-              <Check size={18} className="text-white/80" strokeWidth={2.5} />
-              <span className="text-white/80 font-semibold text-sm sm:text-base">
-                Serving Camden's youth, seniors &amp; families
-              </span>
-            </div>
+            {/* Description + CTA row */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+              <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
+                Mentorship, safety, and support for Camden's youth and seniors — building a stronger community
+                together.
+              </p>
 
-            {/* CTA */}
-            <button
-              data-testid="hero-cta-primary"
-              onClick={() => navigate('/talk-to-sales')}
-              className="bg-white/90 backdrop-blur-sm text-op-navy font-bold text-base px-8 py-4 rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300"
-            >
-              Get Involved
-            </button>
+              <button
+                data-testid="hero-cta-primary"
+                onClick={() => navigate('/talk-to-sales')}
+                className="group flex items-center gap-3 text-white font-bold text-xs sm:text-sm uppercase tracking-[0.12em] shrink-0"
+              >
+                Get Involved
+                <span className="w-9 h-9 rounded-full border border-white/40 flex items-center justify-center group-hover:bg-white group-hover:text-op-navy group-hover:border-white transition-colors">
+                  <ArrowDownRight size={16} />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
