@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Check } from 'lucide-react';
+import { org } from '../../data/organization';
 
 const PREGNANT_IMG = "https://images.unsplash.com/photo-1725393197924-e1dff51c29f1?auto=format&fit=crop&q=80&w=1800";
 
@@ -50,7 +51,7 @@ const HalideTopo = () => {
           {/* Top — Logo */}
           <div>
             <span className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sora">
-              OnePermit
+              {org.shortName}
             </span>
           </div>
 
@@ -61,7 +62,7 @@ const HalideTopo = () => {
                 Your Partner in
               </span>
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
-                IVF &amp; Surrogacy Care
+                Youth &amp; Community Uplift
               </span>
             </h1>
 
@@ -69,13 +70,13 @@ const HalideTopo = () => {
             <div className="flex items-center gap-2 mb-5">
               <Check size={18} className="text-white/80" strokeWidth={2.5} />
               <span className="text-white/80 font-semibold text-sm sm:text-base">
-                Unified care for patients, surrogates &amp; clinics
+                Serving Camden's youth, seniors &amp; families
               </span>
             </div>
 
             {/* Description */}
             <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-              We handle the complexity so families can focus on what matters — their journey to parenthood.
+              We provide mentorship, safety, and support so Camden's youth and seniors can focus on what matters — building a stronger community together.
             </p>
 
             {/* CTA */}
@@ -84,7 +85,7 @@ const HalideTopo = () => {
               onClick={() => navigate('/talk-to-sales')}
               className="bg-white/90 backdrop-blur-sm text-op-navy font-bold text-base px-8 py-4 rounded-full hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300"
             >
-              Request a demo
+              Get Involved
             </button>
           </div>
         </div>
