@@ -50,34 +50,26 @@ const HalideTopo = () => {
         <div className="relative z-10 h-full flex flex-col justify-between px-6 sm:px-10 md:px-16 lg:px-20 py-8 sm:py-12">
           {/* Top — Logo */}
           <div>
-            <span className="text-white font-bold text-xl sm:text-2xl tracking-tight font-sora">
+            <span className="text-white font-bold text-xl sm:text-2xl tracking-tight">
               {org.shortName}
             </span>
           </div>
 
           {/* Bottom — Copy */}
           <div className="max-w-2xl">
-            <h1 className="font-sora text-white leading-[1.05] mb-6">
-              <span className="block text-3xl sm:text-4xl md:text-5xl font-light text-white/80">
-                Your Partner in
-              </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+            <h1 className="text-white leading-[1.05] mb-5">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">
                 Youth &amp; Community Uplift
               </span>
             </h1>
 
             {/* Checkmark line */}
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2 mb-8">
               <Check size={18} className="text-white/80" strokeWidth={2.5} />
               <span className="text-white/80 font-semibold text-sm sm:text-base">
                 Serving Camden's youth, seniors &amp; families
               </span>
             </div>
-
-            {/* Description */}
-            <p className="text-white/60 text-sm sm:text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-              We provide mentorship, safety, and support so Camden's youth and seniors can focus on what matters — building a stronger community together.
-            </p>
 
             {/* CTA */}
             <button

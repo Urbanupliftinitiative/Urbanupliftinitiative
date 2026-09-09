@@ -10,15 +10,13 @@ import PartnersPreviewSection from '../components/landing/PartnersPreviewSection
 import FinalCTASection from '../components/landing/FinalCTASection';
 import SiteFooter from '../components/shared/SiteFooter';
 
-// NOTE: HalideTopo is the locked hero — do not modify its file or its
-// position as the first element rendered here. It's wrapped in font-sora
-// here (not on this page) so the global Inter default used everywhere
-// else can't affect its typography.
+// NOTE: HalideTopo's position as the first element rendered here should
+// stay fixed. Its typography now intentionally matches the rest of the
+// site's Inter default (per explicit request) — the font-sora wrapper
+// that used to protect its Sora typeface has been removed on purpose.
 const HomePage = () => (
   <div className="min-h-screen bg-white" data-testid="homepage">
-    <div className="font-sora">
-      <HalideTopo />
-    </div>
+    <HalideTopo />
     <AboutSection />
     <NeedSection />
     <ProgramsSection />

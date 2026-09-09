@@ -7,11 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Kept for the locked hero (halide-topo-hero.jsx uses font-sora
-        // directly) — do not remove or repurpose.
-        sora: ['Sora', 'sans-serif'],
-        // Editorial Operations design system's primary typeface — the new
-        // default for everything outside the hero.
+        // Editorial Operations design system's primary typeface, used
+        // everywhere including the hero (which used to run a separate
+        // Sora typeface before an explicit request to match the rest of
+        // the site).
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       colors: {

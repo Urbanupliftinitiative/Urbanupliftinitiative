@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -20,8 +19,7 @@
 }
 
 /* Editorial Operations design system — see MY-DESIGN-SYSTEM/design-tokens.json.
-   Body now defaults to Inter/near-black; the hero overrides font-family
-   locally via its own font-sora wrapper, so this does not affect it. */
+   Inter is the default everywhere, including the hero. */
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
