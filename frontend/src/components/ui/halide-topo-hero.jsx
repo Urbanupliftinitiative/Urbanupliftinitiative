@@ -64,18 +64,18 @@ const HalideTopo = () => {
 
             <h1 className="text-white leading-[1.02] tracking-tight mb-6">
               <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                {org.city},
+                Plant. Grow.
               </span>
               <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                uplifted together.
+                Build.
               </span>
             </h1>
 
             {/* Description + CTA row */}
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <p className="text-white/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-md">
-                Mentorship, safety, and support for Camden's youth and seniors — building a stronger community
-                together.
+                Mentorship, safety, and support for at-risk youth and seniors — building stronger communities,
+                starting in Camden.
               </p>
 
               <button
