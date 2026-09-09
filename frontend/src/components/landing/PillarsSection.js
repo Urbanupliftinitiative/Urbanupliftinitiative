@@ -23,12 +23,8 @@ const IMAGES = {
 // pattern, just paired with real photography instead of running as plain
 // text like PillarsInline (used on /programs) does.
 const PillarsSection = () => (
-  <section id="pillars" className="relative bg-white py-20 md:py-28 lg:py-36 overflow-hidden">
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 [background:radial-gradient(125%_125%_at_50%_-10%,#c7d2fe_0%,transparent_60%)]"
-    />
-    <div className="relative mx-auto w-full max-w-ed-container px-4 md:px-6">
+  <section id="pillars" className="bg-ed-warm py-20 md:py-28 lg:py-36">
+    <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
       <motion.div {...useReveal()} className="mb-14 max-w-2xl">
         <Eyebrow>The Five Pillars</Eyebrow>
         <h2 className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink">
