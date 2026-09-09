@@ -1,8 +1,6 @@
 import React from 'react';
 import HalideTopo from '../components/ui/halide-topo-hero';
-import PhotoStripSection from '../components/landing/PhotoStripSection';
 import AboutSection from '../components/landing/AboutSection';
-import ImpactSnapshotSection from '../components/landing/ImpactSnapshotSection';
 import NeedSection from '../components/landing/NeedSection';
 import ProgramsSection from '../components/landing/ProgramsSection';
 import PillarsSection from '../components/landing/PillarsSection';
@@ -26,9 +24,7 @@ const HomePage = () => (
     <div className="font-sora">
       <HalideTopo />
     </div>
-    <PhotoStripSection />
     <AboutSection />
-    <ImpactSnapshotSection />
     <NeedSection />
     <ProgramsSection />
     <PillarsSection />
