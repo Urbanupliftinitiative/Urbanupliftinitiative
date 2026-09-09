@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { stagger, fadeUp, viewportOnce } from '../shared/motion';
-import useReveal from '../shared/useReveal';
-import Eyebrow from '../shared/Eyebrow';
 import { org } from '../../data/organization';
 
 // Answers drawn only from what's already established elsewhere on the site
@@ -16,7 +15,13 @@ const faqs = [
   },
   {
     q: 'How can I get involved?',
-    a: 'You can donate, become a mentor, partner with us as an organization, or simply help spread the word. See the "Get Involved" section above for direct links to each.',
+    a: (
+      <>
+        You can donate, become a mentor, partner with us as an organization, or simply help spread the word. See
+        the "Get Involved" section on our <Link to="/events#get-involved" className="underline hover:text-ed-ink">Events page</Link> for
+        direct links to each.
+      </>
+    ),
   },
   {
     q: 'Where does my donation go?',
@@ -24,11 +29,29 @@ const faqs = [
   },
   {
     q: 'Who runs the organization?',
-    a: `${org.shortName} is run by a team of ${org.teamSize} based in ${org.city}, ${org.state}. Our three officers are listed in the Leadership section above, with the rest of the team profiled on our Team page.`,
+    a: (
+      <>
+        {org.shortName} is run by a team of {org.teamSize} based in {org.city}, {org.state}. Meet everyone on
+        our <Link to="/team" className="underline hover:text-ed-ink">Team page</Link>.
+      </>
+    ),
   },
   {
     q: 'Do you work outside of Camden?',
     a: `No — our work is focused specifically on ${org.city} City residents, from at-risk youth to seniors facing hardship.`,
+  },
+  {
+    q: 'How do I contact you directly?',
+    a: (
+      <>
+        Email us at {org.email}, or use the <Link to="/contact" className="underline hover:text-ed-ink">contact page</Link> and
+        we'll get back to you.
+      </>
+    ),
+  },
+  {
+    q: 'Can I volunteer without becoming a mentor?',
+    a: "Yes — reach out and tell us what you're interested in, and we'll help find the right fit, whether that's a one-time community event or an ongoing role.",
   },
 ];
 
@@ -53,15 +76,8 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-white py-20 md:py-28 lg:py-36 px-4 md:px-6">
+    <section className="bg-white py-16 md:py-24 px-4 md:px-6">
       <div className="mx-auto w-full max-w-ed-container">
-        <motion.div {...useReveal()} className="mb-10 max-w-2xl">
-          <Eyebrow>FAQ</Eyebrow>
-          <h2 className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink">
-            Answers to the questions we hear most.
-          </h2>
-        </motion.div>
-
         <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="border-t border-ed-border">
           {faqs.map((item, i) => (
             <motion.div key={item.q} variants={fadeUp}>

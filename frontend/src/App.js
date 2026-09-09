@@ -10,6 +10,7 @@ import EventsPage from './pages/EventsPage';
 import NewsPage from './pages/NewsPage';
 import GalleryPage from './pages/GalleryPage';
 import ScholarshipsPage from './pages/ScholarshipsPage';
+import FAQPage from './pages/FAQPage';
 import SiteNavbar from './components/shared/SiteNavbar';
 import ScrollToHash from './components/shared/ScrollToHash';
 import './App.css';
@@ -35,6 +36,7 @@ function App() {
             <Route path="/news" element={<NewsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/scholarships" element={<ScholarshipsPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             {/* Locked hero's CTA still navigates here — kept as an alias so
                 that button target is never touched. */}
             <Route path="/talk-to-sales" element={<ContactPage />} />

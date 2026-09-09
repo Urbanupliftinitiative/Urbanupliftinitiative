@@ -17,6 +17,7 @@ export const moreNav = [
   { label: 'News & Media', to: '/news' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Scholarships', to: '/scholarships' },
+  { label: 'FAQ', to: '/faq' },
 ];
 
 export const footerColumns = [

@@ -8,7 +8,6 @@ import MethodologySection from '../components/landing/MethodologySection';
 import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
 import DonateSection from '../components/landing/DonateSection';
 import PartnersPreviewSection from '../components/landing/PartnersPreviewSection';
-import FAQSection from '../components/landing/FAQSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
 import SiteFooter from '../components/shared/SiteFooter';
 
@@ -29,7 +28,6 @@ const HomePage = () => (
     <FundingPrioritiesSection />
     <DonateSection />
     <PartnersPreviewSection />
-    <FAQSection />
     <FinalCTASection />
     <SiteFooter />
   </div>
