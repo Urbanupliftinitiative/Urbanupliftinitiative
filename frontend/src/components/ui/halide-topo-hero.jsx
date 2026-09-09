@@ -57,11 +57,6 @@ const HalideTopo = () => {
 
           {/* Bottom — Copy */}
           <div className="max-w-3xl">
-            {/* Kicker */}
-            <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/80 mb-5">
-              {org.city}, {org.state}
-            </span>
-
             <h1 className="text-white leading-[1.02] tracking-tight mb-6">
               <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
                 Plant. Grow.
