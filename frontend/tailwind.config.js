@@ -28,14 +28,15 @@ module.exports = {
           slate: '#4A4A6A',
         },
         // Editorial Operations tokens (from MY-DESIGN-SYSTEM/design-tokens.json).
-        // Primary accent swapped from the reference system's coral (#FF385C)
-        // to a light blue (Sky-600) per explicit request — chosen over a
-        // paler light blue because it keeps roughly the same white-text
-        // contrast the coral had (~4.1:1 vs ~3.5:1) on solid CTA fills.
+        // Primary accent swapped again — from the reference system's coral
+        // (#FF385C), briefly to a light blue, now to a bold green
+        // (Tailwind Green-600) inspired by Bolt's confident use of green,
+        // without copying Bolt's literal brand hex. ~3.3:1 white-text
+        // contrast on solid CTA fills, in the same range as the coral.
         ed: {
-          accent: '#0284C7',
-          accentSoft: 'rgba(2, 132, 199, 0.08)',
-          accentGlow: 'rgba(2, 132, 199, 0.25)',
+          accent: '#16A34A',
+          accentSoft: 'rgba(22, 163, 74, 0.08)',
+          accentGlow: 'rgba(22, 163, 74, 0.25)',
           cool: '#6597FF',
           ink: '#222222',
           muted: '#717171',
@@ -57,7 +58,7 @@ module.exports = {
         'ed-card': '0 2px 8px rgba(0,0,0,0.04)',
         'ed-raised': '0 2px 12px rgba(0,0,0,0.08)',
         'ed-floating': '0 8px 30px rgba(0,0,0,0.12)',
-        'ed-glow': '0 8px 24px rgba(2,132,199,0.25)',
+        'ed-glow': '0 8px 24px rgba(22,163,74,0.25)',
       },
       transitionTimingFunction: {
         'ed-standard': 'cubic-bezier(0.22, 1, 0.36, 1)',
