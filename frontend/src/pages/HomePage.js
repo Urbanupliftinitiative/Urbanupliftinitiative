@@ -4,13 +4,10 @@ import AboutSection from '../components/landing/AboutSection';
 import NeedSection from '../components/landing/NeedSection';
 import ProgramsSection from '../components/landing/ProgramsSection';
 import PillarsSection from '../components/landing/PillarsSection';
-import StoriesSection from '../components/landing/StoriesSection';
 import MethodologySection from '../components/landing/MethodologySection';
 import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
 import DonateSection from '../components/landing/DonateSection';
-import GetInvolvedSection from '../components/landing/GetInvolvedSection';
 import PartnersPreviewSection from '../components/landing/PartnersPreviewSection';
-import LeadershipSection from '../components/landing/LeadershipSection';
 import FAQSection from '../components/landing/FAQSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
 import SiteFooter from '../components/shared/SiteFooter';
@@ -28,13 +25,10 @@ const HomePage = () => (
     <NeedSection />
     <ProgramsSection />
     <PillarsSection />
-    <StoriesSection />
     <MethodologySection />
     <FundingPrioritiesSection />
     <DonateSection />
-    <GetInvolvedSection />
     <PartnersPreviewSection />
-    <LeadershipSection />
     <FAQSection />
     <FinalCTASection />
     <SiteFooter />

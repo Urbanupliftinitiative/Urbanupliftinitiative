@@ -3,7 +3,7 @@
 
 export const primaryNav = [
   { label: 'Our Work', to: '/programs' },
-  { label: 'Get Involved', to: '/#get-involved' },
+  { label: 'Get Involved', to: '/events#get-involved' },
   { label: 'Partners', to: '/partners' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -25,7 +25,7 @@ export const footerColumns = [
     links: [
       { label: 'About Us', to: '/#about' },
       { label: 'Our Work', to: '/programs' },
-      { label: 'Leadership', to: '/#leadership' },
+      { label: 'Leadership', to: '/team#leadership' },
       { label: 'Contact', to: '/contact' },
     ],
   },
@@ -33,7 +33,7 @@ export const footerColumns = [
     heading: 'Get Involved',
     links: [
       { label: 'Donate', to: '/#donate' },
-      { label: 'Become a Mentor', to: '/#get-involved' },
+      { label: 'Become a Mentor', to: '/events#get-involved' },
       { label: 'Partner With Us', to: '/partners' },
     ],
   },
