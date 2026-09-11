@@ -13,6 +13,11 @@ import MENTORSHIP_MOMENT from '../../assets/gallery/mentorship-moment.jpg';
 import CLEANUP_VOLUNTEER from '../../assets/gallery/cleanup-volunteer.jpg';
 import WITH_GOD_ALL_THINGS from '../../assets/gallery/with-god-all-things.jpg';
 import BRANDED_MASK_SELFIE from '../../assets/gallery/branded-mask-selfie.jpg';
+import COMMUNITY_MEAL from '../../assets/gallery/community-meal-distribution.jpg';
+import NEIGHBORHOOD_CLEANUP_CREW from '../../assets/gallery/neighborhood-cleanup-crew.jpg';
+import TEAM_GYM_EVENT from '../../assets/gallery/team-gym-event.jpg';
+import GENTLEMEN_AND_A_TIE from '../../assets/gallery/gentlemen-and-a-tie-event.jpg';
+import EVENT_FLYER_HANDOUT from '../../assets/gallery/event-flyer-handout.jpg';
 
 const photos = [
   {
@@ -69,6 +74,37 @@ const photos = [
     src: BRANDED_MASK_SELFIE,
     alt: 'A team member wearing an Urban Uplift Initiative branded face mask',
     caption: 'Team gear, up close.',
+    aspect: '3/4',
+  },
+  {
+    src: COMMUNITY_MEAL,
+    alt: "A UUI volunteer handing a meal to a senior on a Camden street corner, with a teen holding a 'Jesus Loves Y'all' sign",
+    caption: 'Meals and care, street level.',
+    aspect: '4/3',
+    span: true,
+  },
+  {
+    src: NEIGHBORHOOD_CLEANUP_CREW,
+    alt: 'Three Urban Uplift Initiative volunteers with cleanup tools on a Camden sidewalk',
+    caption: 'Suited up for a neighborhood cleanup.',
+    aspect: '3/4',
+  },
+  {
+    src: TEAM_GYM_EVENT,
+    alt: 'Five Urban Uplift Initiative team members and family at a community gym event',
+    caption: 'A community gathering at the gym.',
+    aspect: '4/3',
+  },
+  {
+    src: GENTLEMEN_AND_A_TIE,
+    alt: "Three team members holding 'Gentlemen and a Tie' event flyers outdoors",
+    caption: 'Promoting the Gentlemen and a Tie event.',
+    aspect: '4/3',
+  },
+  {
+    src: EVENT_FLYER_HANDOUT,
+    alt: 'A team member giving a thumbs up while holding an event flyer indoors',
+    caption: 'Getting the word out.',
     aspect: '3/4',
   },
 ];
