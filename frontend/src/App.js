@@ -7,6 +7,7 @@ import PartnersPage from './pages/PartnersPage';
 import ContactPage from './pages/ContactPage';
 import TeamPage from './pages/TeamPage';
 import EventsPage from './pages/EventsPage';
+import SeniorSafetyApplicationPage from './pages/SeniorSafetyApplicationPage';
 import NewsPage from './pages/NewsPage';
 import GalleryPage from './pages/GalleryPage';
 import ScholarshipsPage from './pages/ScholarshipsPage';
@@ -33,6 +34,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/apply/senior-safety" element={<SeniorSafetyApplicationPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/scholarships" element={<ScholarshipsPage />} />

@@ -3,6 +3,7 @@ import HalideTopo from '../components/ui/halide-topo-hero';
 import AboutSection from '../components/landing/AboutSection';
 import NeedSection from '../components/landing/NeedSection';
 import ProgramsSection from '../components/landing/ProgramsSection';
+import UpcomingEventsPreviewSection from '../components/landing/UpcomingEventsPreviewSection';
 import MethodologySection from '../components/landing/MethodologySection';
 import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
 import DonateSection from '../components/landing/DonateSection';
@@ -20,6 +21,7 @@ const HomePage = () => (
     <AboutSection />
     <NeedSection />
     <ProgramsSection />
+    <UpcomingEventsPreviewSection />
     <MethodologySection />
     <FundingPrioritiesSection />
     <DonateSection />

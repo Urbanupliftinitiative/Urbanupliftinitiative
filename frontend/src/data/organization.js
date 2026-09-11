@@ -105,6 +105,23 @@ export const programs = [
   },
 ];
 
+// Dated, confirmed events — as opposed to `programs`, which can be
+// ongoing/undated. Kept separate so UpcomingSection can show a real date
+// once one exists instead of the generic "no dated events yet" placeholder.
+export const events = [
+  {
+    id: 'co-alarm-distribution',
+    name: 'Senior Safety Initiative: Free CO & Smoke Alarm Distribution',
+    date: '2026-09-26',
+    dateLabel: 'Saturday, September 26, 2026',
+    location: 'Camden, NJ',
+    summary:
+      'Free carbon monoxide and smoke alarms for Camden seniors, made possible by a grant of 50 alarms from The Lauren Project. Space and supply are limited — seniors are encouraged to apply ahead of the event to reserve a device.',
+    programId: 'senior-safety-initiative',
+    applyTo: '/apply/senior-safety',
+  },
+];
+
 // Long-term capital priorities the organization has named in its own
 // materials — used for donation framing instead of invented dollar-impact
 // claims.

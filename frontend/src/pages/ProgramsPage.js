@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import SiteFooter from '../components/shared/SiteFooter';
 import ProgramsHero from '../components/programs/ProgramsHero';
 import ProgramDetail from '../components/programs/ProgramDetail';
@@ -44,6 +46,15 @@ const ProgramsPage = () => (
     {programs.map((program, i) => (
       <ProgramDetail key={program.id} program={program} reverse={i % 2 === 1}>
         {program.id === 'youth-mentorship' && <PillarsInline />}
+        {program.id === 'senior-safety-initiative' && (
+          <Link
+            to="/apply/senior-safety"
+            className="group inline-flex items-center gap-1.5 text-[14px] font-bold text-ed-ink hover:text-ed-accent focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md"
+          >
+            Apply for a free alarm
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        )}
       </ProgramDetail>
     ))}
     <FinalCTASection />
