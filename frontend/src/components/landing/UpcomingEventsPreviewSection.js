@@ -5,6 +5,7 @@ import { CalendarClock, MapPin, ArrowRight } from 'lucide-react';
 import { stagger, fadeUp, viewportOnce } from '../shared/motion';
 import Eyebrow from '../shared/Eyebrow';
 import { events } from '../../data/organization';
+import eventImages from '../events/eventImages';
 
 // Only renders once a dated event actually exists — an empty landing-page
 // section would just be dead space.
@@ -21,34 +22,42 @@ const UpcomingEventsPreviewSection = () => {
           </motion.h2>
         </motion.div>
 
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10"
-        >
-          {events.map((event) => (
-            <motion.div key={event.id} variants={fadeUp} className="rounded-[14px] border border-ed-border bg-white p-6 flex flex-col">
-              <p className="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.16em] text-ed-accent mb-3">
-                <CalendarClock size={14} /> {event.dateLabel}
-              </p>
-              <h3 className="text-[18px] font-extrabold text-ed-ink mb-2">{event.name}</h3>
-              <p className="text-[14px] text-ed-muted leading-relaxed mb-4">{event.summary}</p>
-              <p className="flex items-center gap-1.5 text-[13px] text-ed-ink/70 mb-5">
-                <MapPin size={14} /> {event.location}
-              </p>
-              {event.applyTo && (
-                <Link
-                  to={event.applyTo}
-                  className="group mt-auto inline-flex items-center gap-1.5 text-[14px] font-bold text-ed-ink hover:text-ed-accent focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md w-fit"
-                >
-                  Apply for a free alarm
-                  <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
-            </motion.div>
-          ))}
+        <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={viewportOnce} className="flex flex-col gap-6 mb-10">
+          {events.map((event) => {
+            const image = eventImages[event.id];
+            return (
+              <motion.div
+                key={event.id}
+                variants={fadeUp}
+                className="rounded-[18px] border border-ed-border bg-white overflow-hidden shadow-ed-card md:grid md:grid-cols-[1.1fr_1.4fr]"
+              >
+                {image && (
+                  <div className="relative aspect-[16/10] md:aspect-auto">
+                    <img src={image.src} alt={image.alt} className="absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                )}
+                <div className="p-6 md:p-8 flex flex-col">
+                  <p className="flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-[0.16em] text-ed-accent mb-3">
+                    <CalendarClock size={14} /> {event.dateLabel}
+                  </p>
+                  <h3 className="text-[20px] md:text-[24px] font-extrabold text-ed-ink mb-2">{event.name}</h3>
+                  <p className="text-[14px] text-ed-muted leading-relaxed mb-4">{event.summary}</p>
+                  <p className="flex items-center gap-1.5 text-[13px] text-ed-ink/70 mb-5">
+                    <MapPin size={14} /> {event.location}
+                  </p>
+                  {event.applyTo && (
+                    <Link
+                      to={event.applyTo}
+                      className="group mt-auto inline-flex items-center gap-1.5 text-[14px] font-bold text-ed-ink hover:text-ed-accent focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md w-fit"
+                    >
+                      Apply for a free alarm
+                      <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         <div className="text-center">
