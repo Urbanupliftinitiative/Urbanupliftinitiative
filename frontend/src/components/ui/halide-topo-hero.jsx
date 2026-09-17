@@ -73,7 +73,7 @@ const HalideTopo = () => {
         }
       `}</style>
 
-      <section data-testid="halide-hero" className="relative w-full h-[100dvh] overflow-hidden rounded-none sm:mx-4 sm:mt-4 sm:rounded-[28px] sm:h-[calc(100dvh-2rem)] sm:w-[calc(100%-2rem)]">
+      <section data-testid="halide-hero" className="relative w-full h-[100lvh] overflow-hidden rounded-none sm:mx-4 sm:mt-4 sm:rounded-[28px] sm:h-[calc(100lvh-2rem)] sm:w-[calc(100%-2rem)]">
         {/* Crossfading background images, one per slide */}
         <div className="absolute inset-0">
           {SLIDES.map((slide, i) => (
