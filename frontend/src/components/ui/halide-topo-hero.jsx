@@ -11,11 +11,16 @@ import NEIGHBORHOOD_CLEANUP_CREW from '../../assets/gallery/neighborhood-cleanup
 // Each slide pairs one real program with the photo already used for it
 // elsewhere on the site (see ProgramsSection's IMAGES map) — no stock or
 // generated photos, just a different facet of the same real work.
+// `position` is a per-photo object-position anchor (as a CSS value, not a
+// Tailwind class, since these are computed and dynamic classes aren't
+// picked up by Tailwind's build-time scanner) — each source photo has its
+// subjects' heads at a different height, so one shared anchor cropped some
+// of them out once stretched to the hero's wide aspect ratio.
 const SLIDES = [
-  { word: 'Community', image: TEAM_IMG },
-  { word: 'Mentorship', image: COMMUNITY_OUTREACH },
-  { word: 'Senior Safety', image: FIRETRUCK_VOLUNTEER },
-  { word: 'Camden', image: NEIGHBORHOOD_CLEANUP_CREW },
+  { word: 'Community', image: TEAM_IMG, position: '50% 40%' },
+  { word: 'Mentorship', image: COMMUNITY_OUTREACH, position: '50% 15%' },
+  { word: 'Senior Safety', image: FIRETRUCK_VOLUNTEER, position: '50% 25%' },
+  { word: 'Camden', image: NEIGHBORHOOD_CLEANUP_CREW, position: '50% 12%' },
 ];
 
 const SLIDE_DURATION_MS = 4200;
@@ -77,7 +82,8 @@ const HalideTopo = () => {
               src={slide.image}
               alt=""
               aria-hidden="true"
-              className={`hero-image-motion absolute inset-0 w-full h-full object-cover object-[50%_40%] transition-opacity duration-[1200ms] ease-in-out ${
+              style={{ objectPosition: slide.position }}
+              className={`hero-image-motion absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
                 i === index ? 'opacity-100' : 'opacity-0'
               }`}
             />
