@@ -6,7 +6,7 @@ import Eyebrow from '../shared/Eyebrow';
 import TEAM_IMG from '../../assets/team-photo.jpg';
 import COMMUNITY_OUTREACH from '../../assets/gallery/community-outreach.jpg';
 import FIRETRUCK_VOLUNTEER from '../../assets/gallery/firetruck-volunteer.jpg';
-import NEIGHBORHOOD_CLEANUP_CREW from '../../assets/gallery/neighborhood-cleanup-crew.jpg';
+import COMMUNITY_CLEANUP from '../../assets/gallery/community-cleanup.jpg';
 
 // Each slide pairs one real program with the photo already used for it
 // elsewhere on the site (see ProgramsSection's IMAGES map) — no stock or
@@ -19,8 +19,8 @@ import NEIGHBORHOOD_CLEANUP_CREW from '../../assets/gallery/neighborhood-cleanup
 const SLIDES = [
   { word: 'Community', image: TEAM_IMG, position: '50% 40%' },
   { word: 'Mentorship', image: COMMUNITY_OUTREACH, position: '50% 15%' },
-  { word: 'Senior Safety', image: FIRETRUCK_VOLUNTEER, position: '50% 25%' },
-  { word: 'Camden', image: NEIGHBORHOOD_CLEANUP_CREW, position: '50% 12%' },
+  { word: 'Senior Safety', image: FIRETRUCK_VOLUNTEER, position: '50% 40%' },
+  { word: 'Camden', image: COMMUNITY_CLEANUP, position: '50% 22%' },
 ];
 
 const SLIDE_DURATION_MS = 4200;
