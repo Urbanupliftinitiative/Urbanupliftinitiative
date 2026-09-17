@@ -84,16 +84,16 @@ const WorkShowcaseSection = () => {
 
   return (
     <section className="relative bg-[#0F2A4D] text-white py-20 md:py-28 lg:py-32 overflow-hidden">
-      <div className="relative h-[420px] sm:h-[620px] md:h-[720px] lg:h-[820px] flex items-center justify-center">
+      <div className="relative h-[480px] sm:h-[620px] md:h-[720px] lg:h-[820px] flex items-center justify-center">
         <Card
           card={leftCard}
-          sizeClass="w-[130px] sm:w-[340px] md:w-[420px] lg:w-[480px]"
-          className="block absolute left-[-4%] sm:left-[-2%] md:left-[2%] -rotate-6 opacity-60 z-0"
+          sizeClass="w-[170px] sm:w-[340px] md:w-[420px] lg:w-[480px]"
+          className="block absolute left-[-6%] sm:left-[-2%] md:left-[2%] -rotate-6 opacity-60 z-0"
         />
         <Card
           card={rightCard}
-          sizeClass="w-[130px] sm:w-[340px] md:w-[420px] lg:w-[480px]"
-          className="block absolute right-[-4%] sm:right-[-2%] md:right-[2%] rotate-6 opacity-60 z-0"
+          sizeClass="w-[170px] sm:w-[340px] md:w-[420px] lg:w-[480px]"
+          className="block absolute right-[-6%] sm:right-[-2%] md:right-[2%] rotate-6 opacity-60 z-0"
         />
         <AnimatePresence mode="wait">
           <motion.div
@@ -104,7 +104,7 @@ const WorkShowcaseSection = () => {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10"
           >
-            <Card card={centerCard} sizeClass="w-[240px] sm:w-[440px] md:w-[540px] lg:w-[620px]" className="relative" />
+            <Card card={centerCard} sizeClass="w-[300px] sm:w-[440px] md:w-[540px] lg:w-[620px]" className="relative" />
           </motion.div>
         </AnimatePresence>
       </div>
