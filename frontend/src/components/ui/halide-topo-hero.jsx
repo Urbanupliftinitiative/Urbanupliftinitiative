@@ -1,11 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowDownRight } from 'lucide-react';
 import { org } from '../../data/organization';
+import Eyebrow from '../shared/Eyebrow';
 import TEAM_IMG from '../../assets/team-photo.jpg';
+import COMMUNITY_OUTREACH from '../../assets/gallery/community-outreach.jpg';
+import FIRETRUCK_VOLUNTEER from '../../assets/gallery/firetruck-volunteer.jpg';
+import NEIGHBORHOOD_CLEANUP_CREW from '../../assets/gallery/neighborhood-cleanup-crew.jpg';
+
+// Each slide pairs one real program with the photo already used for it
+// elsewhere on the site (see ProgramsSection's IMAGES map) — no stock or
+// generated photos, just a different facet of the same real work.
+const SLIDES = [
+  { word: 'Community', image: TEAM_IMG },
+  { word: 'Mentorship', image: COMMUNITY_OUTREACH },
+  { word: 'Senior Safety', image: FIRETRUCK_VOLUNTEER },
+  { word: 'Camden', image: NEIGHBORHOOD_CLEANUP_CREW },
+];
+
+const SLIDE_DURATION_MS = 4200;
+const FADE_MS = 400;
 
 const HalideTopo = () => {
   const navigate = useNavigate();
+  const [index, setIndex] = useState(0);
+  const [wordVisible, setWordVisible] = useState(true);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return undefined;
+
+    const interval = setInterval(() => {
+      setWordVisible(false);
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % SLIDES.length);
+        setWordVisible(true);
+      }, FADE_MS);
+    }, SLIDE_DURATION_MS);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -35,13 +69,19 @@ const HalideTopo = () => {
       `}</style>
 
       <section data-testid="halide-hero" className="relative w-full h-screen overflow-hidden rounded-none sm:mx-4 sm:mt-4 sm:rounded-[28px] sm:h-[calc(100vh-2rem)] sm:w-[calc(100%-2rem)]">
-        {/* Animated Background Image */}
+        {/* Crossfading background images, one per slide */}
         <div className="absolute inset-0">
-          <img
-            src={TEAM_IMG}
-            alt="Urban Uplift Initiative team members standing together outdoors in Camden with the organization's banner"
-            className="hero-image-motion absolute inset-0 w-full h-full object-cover object-[50%_40%]"
-          />
+          {SLIDES.map((slide, i) => (
+            <img
+              key={slide.word}
+              src={slide.image}
+              alt=""
+              aria-hidden="true"
+              className={`hero-image-motion absolute inset-0 w-full h-full object-cover object-[50%_40%] transition-opacity duration-[1200ms] ease-in-out ${
+                i === index ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
           {/* Dark gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
         </div>
@@ -57,12 +97,14 @@ const HalideTopo = () => {
 
           {/* Bottom — Copy */}
           <div className="max-w-3xl">
+            <Eyebrow dark>{org.tagline}</Eyebrow>
             <h1 className="text-white leading-[1.02] tracking-tight mb-6">
-              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                Stronger together,
-              </span>
-              <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold">
-                block by block.
+              <span
+                className={`block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold transition-opacity duration-300 ${
+                  wordVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {SLIDES[index].word}
               </span>
             </h1>
 
