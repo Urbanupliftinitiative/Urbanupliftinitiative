@@ -109,7 +109,7 @@ const WorkShowcaseSection = () => {
         </AnimatePresence>
       </div>
 
-      <div className="mx-auto w-full max-w-ed-container px-4 md:px-6 mt-12 md:mt-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
+      <div className="mx-auto w-full max-w-ed-container px-4 md:px-6 mt-4 md:mt-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
         <div>
           <p className="text-[26px] sm:text-[32px] md:text-[38px] font-extrabold tracking-[-0.02em] leading-tight mb-3">
             See the difference we're making.
