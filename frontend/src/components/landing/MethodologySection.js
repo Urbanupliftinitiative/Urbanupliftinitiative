@@ -40,8 +40,8 @@ const MethodologySection = () => (
       <img
         src={TEAM_GYM_EVENT}
         alt="Urban Uplift Initiative team members and family at a community gathering"
-        className="w-full h-[320px] sm:h-[420px] md:h-[520px] object-cover"
-        style={{ objectPosition: '50% 18%' }}
+        className="w-full h-[60vh] sm:h-[70vh] md:h-[80vh] max-h-[900px] object-cover"
+        style={{ objectPosition: '50% 22%' }}
       />
     </motion.div>
 
