@@ -2,7 +2,6 @@ import React from 'react';
 import HalideTopo from '../components/ui/halide-topo-hero';
 import AboutSection from '../components/landing/AboutSection';
 import WorkShowcaseSection from '../components/landing/WorkShowcaseSection';
-import ProgramsSection from '../components/landing/ProgramsSection';
 import UpcomingEventsPreviewSection from '../components/landing/UpcomingEventsPreviewSection';
 import MethodologySection from '../components/landing/MethodologySection';
 import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
@@ -20,7 +19,6 @@ const HomePage = () => (
     <HalideTopo />
     <AboutSection />
     <WorkShowcaseSection />
-    <ProgramsSection />
     <UpcomingEventsPreviewSection />
     <MethodologySection />
     <FundingPrioritiesSection />
