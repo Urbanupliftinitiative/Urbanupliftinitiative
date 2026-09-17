@@ -4,7 +4,6 @@ import AboutSection from '../components/landing/AboutSection';
 import WorkShowcaseSection from '../components/landing/WorkShowcaseSection';
 import UpcomingEventsPreviewSection from '../components/landing/UpcomingEventsPreviewSection';
 import MethodologySection from '../components/landing/MethodologySection';
-import FundingPrioritiesSection from '../components/landing/FundingPrioritiesSection';
 import DonateSection from '../components/landing/DonateSection';
 import PartnersPreviewSection from '../components/landing/PartnersPreviewSection';
 import FinalCTASection from '../components/landing/FinalCTASection';
@@ -21,7 +20,6 @@ const HomePage = () => (
     <WorkShowcaseSection />
     <UpcomingEventsPreviewSection />
     <MethodologySection />
-    <FundingPrioritiesSection />
     <DonateSection />
     <PartnersPreviewSection />
     <FinalCTASection />
