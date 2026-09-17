@@ -30,7 +30,7 @@ const DonateSection = () => {
   };
 
   return (
-    <section id="donate" className="bg-white py-20 md:py-28 lg:py-36 px-4 md:px-6">
+    <section id="donate" className="bg-white pt-12 md:pt-16 lg:pt-20 pb-20 md:pb-28 lg:pb-36 px-4 md:px-6">
       <div className="mx-auto max-w-xl">
         <motion.div {...useReveal()} className="text-center mb-12">
           <div className="flex justify-center"><Eyebrow>Give</Eyebrow></div>

@@ -13,7 +13,7 @@ const ICONS = [Search, Handshake, Users, ClipboardList, Sprout];
 // icon-grid-with-copy block — translated into this site's own dark/green
 // design tokens rather than Horizon54's navy/teal skin.
 const MethodologySection = () => (
-  <section className="bg-white text-ed-ink py-20 md:py-28 lg:py-36">
+  <section className="bg-white text-ed-ink pt-20 md:pt-28 lg:pt-36 pb-12 md:pb-16 lg:pb-20">
     <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
       <motion.div
         variants={stagger}
@@ -51,7 +51,7 @@ const MethodologySection = () => (
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 border-t border-ed-border pt-12"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
       >
         {howWeCreateChange.map((item, i) => {
           const Icon = ICONS[i];
