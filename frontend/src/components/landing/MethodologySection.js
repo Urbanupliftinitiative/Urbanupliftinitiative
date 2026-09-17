@@ -13,7 +13,7 @@ const ICONS = [Search, Handshake, Users, ClipboardList, Sprout];
 // icon-grid-with-copy block — translated into this site's own dark/green
 // design tokens rather than Horizon54's navy/teal skin.
 const MethodologySection = () => (
-  <section className="bg-ed-dark text-white py-20 md:py-28 lg:py-36">
+  <section className="bg-white text-ed-ink py-20 md:py-28 lg:py-36">
     <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
       <motion.div
         variants={stagger}
@@ -24,13 +24,13 @@ const MethodologySection = () => (
       >
         <div>
           <motion.div variants={fadeUp}>
-            <Eyebrow dark>How We Create Change</Eyebrow>
+            <Eyebrow>How We Create Change</Eyebrow>
           </motion.div>
-          <motion.h2 variants={fadeUp} className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em]">
+          <motion.h2 variants={fadeUp} className="text-[34px] sm:text-[44px] md:text-[52px] font-extrabold leading-[1.0] tracking-[-0.03em] text-ed-ink">
             Our approach, step by step.
           </motion.h2>
         </div>
-        <motion.p variants={fadeUp} className="text-[15px] text-white/50 leading-relaxed">
+        <motion.p variants={fadeUp} className="text-[15px] text-ed-ink/60 leading-relaxed">
           {communityDevelopmentStatement}
         </motion.p>
       </motion.div>
@@ -51,7 +51,7 @@ const MethodologySection = () => (
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 border-t border-white/15 pt-12"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 border-t border-ed-border pt-12"
       >
         {howWeCreateChange.map((item, i) => {
           const Icon = ICONS[i];
@@ -59,8 +59,8 @@ const MethodologySection = () => (
             <motion.div key={item.step} variants={fadeUp}>
               <Icon size={24} className="text-ed-accent mb-4" strokeWidth={1.5} />
               <span className="text-[12px] font-extrabold text-ed-accent">{item.step}</span>
-              <h3 className="text-[17px] font-extrabold tracking-[-0.01em] mt-2 mb-2">{item.title}</h3>
-              <p className="text-[14px] text-white/50 leading-relaxed">{item.description}</p>
+              <h3 className="text-[17px] font-extrabold tracking-[-0.01em] mt-2 mb-2 text-ed-ink">{item.title}</h3>
+              <p className="text-[14px] text-ed-ink/60 leading-relaxed">{item.description}</p>
             </motion.div>
           );
         })}
