@@ -77,31 +77,16 @@ const HalideTopo = () => {
         {/* Crossfading background images, one per slide */}
         <div className="absolute inset-0">
           {SLIDES.map((slide, i) => (
-            <div
+            <img
               key={slide.word}
-              className={`absolute inset-0 transition-opacity duration-[1200ms] ease-in-out ${
+              src={slide.image}
+              alt=""
+              aria-hidden="true"
+              style={{ objectPosition: slide.position }}
+              className={`hero-image-motion absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out ${
                 i === index ? 'opacity-100' : 'opacity-0'
               }`}
-            >
-              {/* Mobile only: on a narrow/tall screen, a hard object-cover
-                  crop has to cut away roughly half the photo's width,
-                  cropping people out with no position that saves everyone.
-                  A blurred, oversized copy fills the frame instead, with
-                  the real photo shown uncropped (object-contain) on top. */}
-              <img
-                src={slide.image}
-                alt=""
-                aria-hidden="true"
-                className="sm:hidden absolute inset-0 w-full h-full object-cover scale-125 blur-2xl brightness-[0.6]"
-              />
-              <img
-                src={slide.image}
-                alt=""
-                aria-hidden="true"
-                style={{ objectPosition: slide.position }}
-                className="hero-image-motion absolute inset-0 w-full h-full object-contain sm:object-cover"
-              />
-            </div>
+            />
           ))}
           {/* Dark gradient overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
