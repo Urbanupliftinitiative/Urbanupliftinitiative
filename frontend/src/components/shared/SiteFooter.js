@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { Mail, MapPin, Phone, Globe, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { footerColumns } from '../../data/navigation';
 import { org, socialLinks } from '../../data/organization';
 
@@ -37,6 +37,16 @@ const SiteFooter = () => {
             <p className="font-extrabold text-lg text-white mb-2 tracking-tight">{org.legalName}</p>
             <p className="text-[13px] text-white/50 mb-6 max-w-xs">{org.tagline}</p>
             <div className="space-y-2 text-[13px] text-white/60">
+              {org.website && (
+                <a
+                  href={org.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`flex items-center gap-2 hover:text-white transition-colors ${FOCUS_RING}`}
+                >
+                  <Globe size={15} /> {org.website.replace(/^https?:\/\//, '')}
+                </a>
+              )}
               <a href={`mailto:${org.email}`} className={`flex items-center gap-2 hover:text-white transition-colors ${FOCUS_RING}`}>
                 <Mail size={15} /> {org.email}
               </a>

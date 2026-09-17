@@ -14,6 +14,7 @@ export const org = {
   state: 'NJ',
   region: 'Camden City',
   email: 'UrbanUpliftInitiative@gmail.com',
+  website: 'https://urbanupliftinitiative.org',
   orgType: 'Faith-based community nonprofit',
   teamSize: 6,
   // Trust-signal fields the org hasn't published yet. Left undefined
