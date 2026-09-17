@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Car, Building2, HeartHandshake } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Car, Building2, HeartHandshake, ArrowRight } from 'lucide-react';
 import { stagger, fadeUp, viewportOnce } from '../shared/motion';
 import Eyebrow from '../shared/Eyebrow';
 import { fundingPriorities } from '../../data/organization';
@@ -11,6 +12,10 @@ const ICONS = {
   'ongoing-programs': HeartHandshake,
 };
 
+// Borderless icon-grid pattern to match MethodologySection's — cards
+// dropped their background/border in favor of icon + copy + a real link
+// (no page exists per priority, so it points at the donate flow instead of
+// a placeholder "Learn More").
 const FundingPrioritiesSection = () => (
   <section className="bg-ed-warm py-20 md:py-28 lg:py-36">
     <div className="mx-auto w-full max-w-ed-container px-4 md:px-6">
@@ -32,20 +37,25 @@ const FundingPrioritiesSection = () => (
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 border-t border-ed-border pt-12"
       >
         {fundingPriorities.map((priority) => {
           const Icon = ICONS[priority.id];
           return (
-            <motion.div key={priority.id} variants={fadeUp} className="bg-white rounded-[14px] border border-ed-border shadow-ed-card p-6">
-              <div className="w-11 h-11 rounded-[10px] bg-ed-accentSoft flex items-center justify-center mb-5">
-                <Icon size={20} className="text-ed-accent" strokeWidth={1.5} />
-              </div>
-              <h3 className="text-[16px] font-extrabold tracking-[-0.01em] text-ed-ink mb-2">
+            <motion.div key={priority.id} variants={fadeUp}>
+              <Icon size={24} className="text-ed-accent mb-4" strokeWidth={1.5} />
+              <h3 className="text-[17px] font-extrabold tracking-[-0.01em] text-ed-ink mb-2">
                 {priority.name}
                 {priority.targetYear ? <span className="text-ed-accent"> · {priority.targetYear}</span> : null}
               </h3>
-              <p className="text-[14px] text-ed-ink/60 leading-relaxed">{priority.description}</p>
+              <p className="text-[14px] text-ed-ink/60 leading-relaxed mb-4">{priority.description}</p>
+              <Link
+                to="/#donate"
+                className="group inline-flex items-center gap-1.5 text-[13px] font-bold text-ed-ink hover:text-ed-accent focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-ed-accent focus-visible:outline-offset-2 rounded-md"
+              >
+                Give toward this
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
           );
         })}
