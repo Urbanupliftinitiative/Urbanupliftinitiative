@@ -1,7 +1,7 @@
 import React from 'react';
 import HalideTopo from '../components/ui/halide-topo-hero';
 import AboutSection from '../components/landing/AboutSection';
-import NeedSection from '../components/landing/NeedSection';
+import WorkShowcaseSection from '../components/landing/WorkShowcaseSection';
 import ProgramsSection from '../components/landing/ProgramsSection';
 import UpcomingEventsPreviewSection from '../components/landing/UpcomingEventsPreviewSection';
 import MethodologySection from '../components/landing/MethodologySection';
@@ -19,7 +19,7 @@ const HomePage = () => (
   <div className="min-h-screen bg-white" data-testid="homepage">
     <HalideTopo />
     <AboutSection />
-    <NeedSection />
+    <WorkShowcaseSection />
     <ProgramsSection />
     <UpcomingEventsPreviewSection />
     <MethodologySection />
