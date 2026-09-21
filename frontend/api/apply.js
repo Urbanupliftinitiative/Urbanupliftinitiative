@@ -1,6 +1,9 @@
 const { Resend } = require('resend');
 
-const TO_EMAIL = 'UrbanUpliftInitiative@gmail.com';
+// Lowercase deliberately — Resend's sandbox sender only allows sending to
+// the account's own address and appears to match it case-sensitively, so
+// this must match exactly what the Resend account was signed up with.
+const TO_EMAIL = 'urbanupliftinitiative@gmail.com';
 // Guard against a missing key at module load — the Resend constructor
 // throws immediately otherwise, crashing every invocation of this
 // function (even ones that would fail validation first) until the
