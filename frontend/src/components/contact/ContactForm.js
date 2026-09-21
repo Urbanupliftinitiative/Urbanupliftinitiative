@@ -13,10 +13,9 @@ const REASONS = [
   'Other',
 ];
 
-// Same FormSubmit.co setup as the Senior Safety application form — no
-// backend needed, delivers straight to the org inbox.
-const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${org.email}`;
-
+// Sent via our own Vercel serverless function (/api/contact.js), which
+// emails through Resend — not FormSubmit.co, which turned out to be
+// unreliable (see the Senior Safety application form's history).
 const ContactForm = () => {
   const [form, setForm] = useState({ name: '', email: '', reason: REASONS[0], message: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
@@ -27,19 +26,13 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: `Contact form — ${form.reason}`,
-          _template: 'table',
-          Name: form.name,
-          Email: form.email,
-          'I am a': form.reason,
-          Message: form.message,
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('FormSubmit request failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error('Contact request failed');
       setStatus('sent');
     } catch (err) {
       setStatus('error');
