@@ -9,12 +9,10 @@ const event = events.find((e) => e.id === 'co-alarm-distribution');
 
 const EMPTY_FORM = { name: '', age: '', address: '', phone: '', email: '', notes: '' };
 
-// FormSubmit.co delivers straight to the org inbox with no backend of our
-// own — no signup needed, but the first-ever submission to a given address
-// triggers a one-time confirmation email that has to be clicked before any
-// further submissions are actually delivered.
-const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${org.email}`;
-
+// Sent via our own Vercel serverless function (/api/apply.js), which emails
+// through Resend — not FormSubmit.co, which turned out to be unreliable
+// (observed frequent timeouts/522s from their service, meaning real
+// applications were silently failing to arrive).
 const SeniorSafetyApplicationForm = () => {
   const [form, setForm] = useState(EMPTY_FORM);
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
@@ -25,21 +23,13 @@ const SeniorSafetyApplicationForm = () => {
     e.preventDefault();
     setStatus('sending');
     try {
-      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+      const res = await fetch('/api/apply', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          _subject: 'CO Alarm Request — Senior Safety Initiative',
-          _template: 'table',
-          Name: form.name,
-          Age: form.age,
-          Address: form.address,
-          Phone: form.phone,
-          Email: form.email || '(not provided)',
-          Notes: form.notes || '(none)',
-        }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('FormSubmit request failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error('Application request failed');
       setStatus('sent');
     } catch (err) {
       setStatus('error');
