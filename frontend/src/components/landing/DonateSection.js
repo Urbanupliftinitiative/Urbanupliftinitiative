@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, AlertTriangle } from 'lucide-react';
 import useReveal from '../shared/useReveal';
 import Eyebrow from '../shared/Eyebrow';
 import { org } from '../../data/organization';
@@ -15,18 +15,46 @@ const DonateSection = () => {
   const [amount, setAmount] = useState(50);
   const [customAmount, setCustomAmount] = useState('');
   const [form, setForm] = useState({ name: '', email: '' });
-  const [submitted, setSubmitted] = useState(false);
+  // idle | redirecting | error | returned-success | returned-cancelled
+  const [status, setStatus] = useState('idle');
 
   const selectedAmount = customAmount ? Number(customAmount) : amount;
+
+  // Stripe redirects back here with ?donation=success|cancelled — read it
+  // once on mount, then strip it from the URL so a refresh doesn't
+  // re-trigger the message.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const donation = params.get('donation');
+    if (donation === 'success') setStatus('returned-success');
+    if (donation === 'cancelled') setStatus('returned-cancelled');
+    if (donation) {
+      params.delete('donation');
+      const newSearch = params.toString();
+      window.history.replaceState({}, '', `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`);
+    }
+  }, []);
 
   const handleAmountClick = (value) => {
     setAmount(value);
     setCustomAmount('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('redirecting');
+    try {
+      const res = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: selectedAmount, frequency, name: form.name, email: form.email }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.url) throw new Error('Checkout session request failed');
+      window.location.href = data.url;
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -44,17 +72,37 @@ const DonateSection = () => {
         </motion.div>
 
         <div className="bg-white rounded-[16px] border border-ed-border shadow-ed-raised p-8 md:p-10">
-          {submitted ? (
+          {status === 'returned-success' ? (
             <div role="status" className="text-center py-10">
               <CheckCircle2 size={44} className="text-ed-accent mx-auto mb-4" />
-              <h3 className="text-[19px] font-extrabold text-ed-ink mb-2">Thank you, {form.name || 'friend'}.</h3>
+              <h3 className="text-[19px] font-extrabold text-ed-ink mb-2">Thank you for your gift.</h3>
               <p className="text-[14px] text-ed-muted">
-                This is a demo donation form — no payment has been processed. Once {org.shortName} connects a real
-                payment provider, gifts like yours will go directly to work in Camden.
+                Your donation has been received. It goes directly to work in Camden — thank you for standing with{' '}
+                {org.shortName}.
               </p>
+            </div>
+          ) : status === 'error' ? (
+            <div role="alert" className="text-center py-10">
+              <AlertTriangle size={44} className="text-ed-danger mx-auto mb-4" />
+              <h3 className="text-[19px] font-extrabold text-ed-ink mb-2">Something went wrong.</h3>
+              <p className="text-[14px] text-ed-muted mb-6">
+                We couldn't start checkout. Please try again, or email {org.email} directly.
+              </p>
+              <button
+                type="button"
+                onClick={() => setStatus('idle')}
+                className={`inline-flex items-center justify-center font-semibold text-white bg-ed-accent rounded-full px-6 min-h-[44px] ${FOCUS_RING}`}
+              >
+                Try again
+              </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
+              {status === 'returned-cancelled' && (
+                <p className="mb-6 rounded-[12px] bg-ed-warning/10 border border-ed-warning/30 px-4 py-3 text-[13px] text-ed-ink">
+                  Checkout was cancelled — no charge was made. Ready when you are.
+                </p>
+              )}
               <div className="flex gap-2 mb-6" role="group" aria-label="Donation frequency">
                 {['once', 'monthly'].map((freq) => (
                   <button
@@ -128,12 +176,15 @@ const DonateSection = () => {
 
               <button
                 type="submit"
-                className={`w-full min-h-[48px] bg-ed-accent text-white rounded-full text-[15px] font-bold shadow-ed-glow hover:-translate-y-px transition-transform ${FOCUS_RING}`}
+                disabled={status === 'redirecting' || !selectedAmount}
+                className={`w-full min-h-[48px] bg-ed-accent text-white rounded-full text-[15px] font-bold shadow-ed-glow hover:-translate-y-px transition-transform disabled:opacity-60 disabled:hover:translate-y-0 ${FOCUS_RING}`}
               >
-                Donate ${selectedAmount || 0}{frequency === 'monthly' ? '/month' : ''}
+                {status === 'redirecting'
+                  ? 'Redirecting to secure checkout…'
+                  : `Donate $${selectedAmount || 0}${frequency === 'monthly' ? '/month' : ''}`}
               </button>
               <p className="mt-3 text-[12px] text-ed-muted text-center">
-                Demo form — not yet connected to a live payment processor. No charge will occur.
+                You'll be redirected to Stripe's secure checkout to complete your gift.
               </p>
             </form>
           )}
