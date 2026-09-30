@@ -17,7 +17,7 @@ const SeniorSafetyApplicationPage = () => (
           </h1>
           <p className="text-[16px] md:text-[18px] text-white/55 max-w-2xl leading-relaxed">
             Thanks to a grant of 50 alarms from The Lauren Project, we're distributing free carbon monoxide and
-            smoke alarms to Camden seniors on Saturday, September 26, 2026. Reserve one below.
+            smoke alarms to Camden seniors on Saturday, October 3, 2026. Reserve one below.
           </p>
         </motion.div>
       </div>
